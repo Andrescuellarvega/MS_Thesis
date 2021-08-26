@@ -25,7 +25,8 @@
 \usepackage[colorlinks=false]{hyperref}  % for urls
 \usepackage{showkeys} % shows labels during draft mode
 %\usepackage[document]{ragged2e} % uncomment for non-justified text
-
+\usepackage{comment}
+\usepackage{amsmath}
 
 % Uncomment the line below to check if text is aligned to margins
 %\margins
@@ -45,13 +46,13 @@
 
 
 % Insert your name and major here in the format shown
-\Author{John Q. Citizen}
-\AuthorLastFirst{Citizen, John Q.}
-\Major{Mathematics}
+\Author{Andr\'es Cu\'ellar Vega}
+\AuthorLastFirst{Cu\'ellar Vega, Andr\'es}
+\Major{Physics}
 
 
 % Insert your graduation date here
-\Month{May}
+\Month{Dec}
 \Year{2021}
 
 
@@ -64,7 +65,7 @@ When Additional Lines Are Needed}
 
 
 % Insert your research advisor and his title here
-\Advisor{Dr. Leonhard Euler}
+\Advisor{Dr. Andreas Hanke}
 \AdvisorTitle{Chair of Committee}
 
 
@@ -114,13 +115,13 @@ A brief biographical sketch of the student is required as part of each thesis.
 
 % This command makes the formal preliminary pages.
 % You can comment it out during the drafting process if you want to save paper.
-\makepreliminarypages
+%\makepreliminarypages
 
 
 % These insert a table of contents, list of tables, and list of figures
-\tableofcontents
-\listoftables
-\listoffigures
+%\tableofcontents
+%\listoftables
+%\listoffigures
 
 
 % This starts regular page counting in Arabic numerals
@@ -133,7 +134,7 @@ A brief biographical sketch of the student is required as part of each thesis.
 % OK. Everything is set up. Insert your thesis below.
 % It's a good idea to split your thesis up into different files and use
 % the \input command
-\input{introduction.tex}
+\input{chapters/introduction.tex}
 
 
 % This makes the bibliography.
@@ -149,6 +150,6 @@ A brief biographical sketch of the student is required as part of each thesis.
 
 
 % This inserts your Biographical Sketch
-\biographypage
+%\biographypage
 
 \end{document}
