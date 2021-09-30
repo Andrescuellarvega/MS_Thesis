@@ -1,0 +1,204 @@
+\chapter{Calculation of Bloch functions}\label{ch:appendix_bloch}
+%
+\noindent
+Let us first consider the background periodic potential in the static case where we apply a DC drive so that the SQUID energy $E_J(t) = E_J^0$ is constant. Following the canonical quantization procedure, 
+\color{blue} we turn the classical flux field ${\Phi}_n(x,t)$ 
+in compartment $n$ of the periodic array \color{red} (see Fig.\,X) \color{blue}
+into a field operator $\hat{\Phi}_n(x,t)$, which is expanded in terms of 
+annihilation and creation operators $\color{blue} \hat{a}_n(k)$ and 
+$\color{blue} {\hat a}_n^\dagger(k)$:
+%
+\begin{equation} \label{eq:flux_field_orig}
+    \hat{\Phi}_n(x,t) = \sqrt{\frac{\hbar}{2 C_0}} 
+    \int_{-\infty}^{\infty}\frac{dk}{2 \pi} \frac{1}{\sqrt{\omega_k}}
+    \left\{ \hat{a}_n(k) \psi_k(x)e^{-i \omega(k) \, t} + 
+    \hat{a}_n^{\dagger}(k) \psi_k^*(x) e^{i \omega(k) \, t} \right\} \, \, .
+\end{equation}
+%
+The annihilation and creation operators obey the commutation relations
+%
+\begin{equation} \label{eq:cra_orig}
+    \left[ \hat{a}_n(k),{\hat a}_{n'}^\dagger(k') \right] = \delta_{nn'} \, 2 \pi \delta(k - k')
+\end{equation}
+%
+and thus have units of $\text{length}^{1/2}$.
+Equation (\ref{eq:flux_field_orig}) also incorporates the Bloch-type functions 
+%
+\begin{equation} \label{eq:psi1}
+\psi_k(x) = e^{i k x} u_k(x) \, \, ,   
+\end{equation}
+%
+where $u_k(x)$ has period $\ell$, i.e., $u_k(x + \ell n) = u_k(x)$ for all integers $n$.
+The Bloch functions $\psi_k(x)$ in Eq.\,(\ref{eq:psi1}) are unitless, orthogonal with respect to 
+the 1D wave vector $k$, and normalized such that
+%
+\begin{equation} \label{eq:psi1_norm_orig}
+\int_{-\infty}^{\infty} dx \, \psi^*_k(x) \psi_{k'}(x) = 2 \pi \, \delta(k - k') \, \, .
+\end{equation}
+%
+The prefactor $\displaystyle{\sqrt{\frac{\hbar}{2 C_0}}}$ in Eq.\,(\ref{eq:flux_field_orig}) is chosen 
+to obtain the canonical commutation relation 
+%
+\begin{equation} \label{eq:commrelphi}
+\left[ \hat{\Phi}_n(x,t), \hat{P}_n(x',t) \right] = i \hbar \delta(x-x')
+\end{equation}
+%
+where $\hat{P}_n(x,t) = C_0 \displaystyle{\frac{d}{dt}} \hat{\Phi}_n(x,t)$ is the 
+canonical/ conjugate of $\hat{\Phi}_n(x,t)$ and $C_0$ is the characteristic capacitance of the CPW per unit length. 
+%
+We now rewrite Eq.\,(\ref{eq:flux_field_orig}) in terms of unitless variables 
+by expressing lenghts in units of $\ell$ and times in units of $\ell/v$
+as outlined in \color{red} Section X:  \color{blue}  
+%
+\begin{equation} \label{eq:flux_field}
+    \hat{\phi}_n(x,t) = 
+    \int_{-\infty}^{\infty}\frac{dk}{2 \pi} \frac{1}{\sqrt{\omega_k}}
+    \left[ \hat{a}_n(k) \psi_k(x)e^{-i \omega(k) \, t} + 
+    \hat{a}_n^{\dagger}(k) \psi_k^*(x) e^{i \omega(k) \, t} \right]
+\end{equation}
+%
+with the unitless field operator in compartment $n$ of the periodic array
+%
+\begin{equation} \label{eq:ufo}
+\hat{\phi}_n(x,t) := \sqrt{\frac{2 C_0 v}{\hbar}} \, \hat{\Phi}_n(x,t) \, \, .
+\end{equation}
+%
+Unitless annihilation and creation operators are defined by $\hat{a}_n(k)/\sqrt{\ell}$ 
+and ${\hat a}_{n}^\dagger(k) / \sqrt{\ell}$ and again denoted by
+$\hat{a}_n(k)$, ${\hat a}_{n}^\dagger(k)$ to keep the notation simple. 
+They obey the commutation relations 
+%
+\begin{equation} \label{eq:cra}
+    \left[ \hat{a}_n(k),{\hat a}_{n'}^\dagger(k') \right] = \delta_{nn'} \, 2 \pi \delta(k - k') \, \, .
+\end{equation}
+%
+All variables in Eq.\,(\ref{eq:flux_field}) are unitless by expressing lengths in units of $\ell$
+and times in units of $\ell/v$.
+%
+\color{black}
+%
+%
+Given the time dependence of the flux field $\hat{\phi}_n(x,t)$, we can write our boundary condition (\ref{eq:BC_field}) as
+%
+\begin{equation}
+\left[-\omega^2 C_{J}+\hbar\left(\frac{2 \pi}{\Phi_{0}}\right)^{2} E_{j}^0\right]\hat{\phi}_n(x,t) -\frac{\hbar}{L_{0}}\left(\left.\frac{\partial \hat{\phi}_n(x,t)}{\partial x}\right|_{x_n^{+}}-\left.\frac{\partial \hat{\phi}_n(x,t)}{\partial x}\right|_{x_n^{-}}\right)=0.
+\end{equation}
+%
+By construction, we require the Bloch functions $\psi_k(x)$ to be eigenfunctions of
+%
+\begin{equation}\label{eq:bloch_eigenvalproblem}
+\left.\frac{\partial\psi_{k}(x)}{\partial x}\right|_{x_n^{+}}-\left.\frac{\partial\psi_{k}(x)}{\partial x}\right|_{x_n^{-}}=\lambda \psi_k(x),
+\end{equation}
+%
+where $\lambda$ is defined as:
+%
+\begin{equation}
+\lambda = \left(\frac{L_0}{\hbar}\right)  
+\left[-\omega^2 C_{J}+\hbar\left(\frac{2 \pi}{\Phi_{0}}\right)^{2} E_{j}^0\right]
+\end{equation}
+%
+as well as to satisfy the continuity condition
+%
+\begin{equation}\label{eq:continuity_bloch}
+\biggl.\psi_{k}(x)\biggl|_{x=x_{n}}=\biggl.\psi_{k}(x)\biggr|_{x=x_{n}^{+}}.
+\end{equation}
+%
+We express solutions as
+%
+\begin{align}
+\psi_{k,n}(x) = A_n e^{i\omega(x}-n) + B_n e^{-i\omega(x-n)},\hspace{16ex} n-1 < x < n,\\
+\psi_{k,n+1}(x) = A_{n+1} e^{i\omega(x-n-1)} + B_{n+1} e^{-i\omega(x-n-1)}, \hspace{10ex} n < x < n+1.
+\end{align}
+%
+We follow a standard procedure to find wavefunction solutions to the Kronig Penney model, employing a transfer matrix method to find solutions for $A_{n+1}, B_{n+1}$ in terms of $A_n, B_n$. Using (\ref{eq:continuity_bloch}), we can express (\ref{eq:bloch_eigenvalproblem}), with a transfer matrix
+%
+\begin{equation}
+ \begin{pmatrix}
+ A_{n+1} \\ B_{n+1}
+ \end{pmatrix}
+ = T 
+ \begin{pmatrix}
+ A_n \\ B_n
+ \end{pmatrix}
+\end{equation}{}
+%
+We construct matrix $T=PL^{-1}VL$ by defining the following matrices 
+%
+\begin{align}
+L = \begin{pmatrix}
+1 & 1 \\
+i\omega & -i\omega
+\end{pmatrix} \\
+%
+V = \begin{pmatrix}
+1 & 0 \\
+\lambda & 1
+\end{pmatrix} \\
+%
+P = \begin{pmatrix}
+e^{i\omega} & 0 \\
+0 & e^{-i\omega}.
+\end{pmatrix}
+\end{align} 
+%
+We then find eigenvalues for $T$
+\begin{equation}
+    \mu_{(1/2)} = \cos{\omega} + \frac{\lambda}{2\omega}\sin{\omega}\mp i \sqrt{1-\left(\cos{\omega} + \frac{\lambda}{2\omega}\sin{\omega}\right)^2}
+\end{equation}
+%
+The determinant of $T$ is 1 (det $T = 1$), thus the eigenvalues of this matrix fulfill $\mu_1 \cdot \mu_2 = 1$. We find that $|\mu_1| = |\mu_2|=1$, and thus we can define $\tilde{k}$ as $e^{\pm ik} = \mu_{(1/2)}$.\\
+We find a band structure with $k$-bands determined by the dispersion relation
+\begin{equation}
+    \cos{k} = \cos{\omega} + \frac{\lambda}{2\omega}\sin{\omega}
+\end{equation}
+%
+where physical states correspond to solutions such that
+\begin{equation}\label{eq:band_condition}
+    \left|\cos{\omega} + \frac{\lambda}{2\omega}\sin{\omega}\right|\leq 1.
+\end{equation}
+%
+The (normalized) eigenvectors of $T$ are given by:
+\begin{gather}
+    \hat{V}^{(1)}
+    = N
+    \begin{pmatrix}
+    e^{i\omega}\left\lbrace-\cos{\omega} + \frac{\lambda}{2\omega}\sin{\omega} - \frac{2\omega}{\lambda}\sqrt{1-\left(\cos{\omega+\frac{\lambda}{2\omega}\sin{\omega}}\right)^2}
+    \right\rbrace \\ 1 \end{pmatrix} \\
+    \hat{V}^{(2)}
+    = N
+    \begin{pmatrix}
+    \left\lbrace-\cos{\omega} + \frac{\lambda}{2\omega}\sin{\omega} + \frac{2\omega}{\lambda}\sqrt{1-\left(\cos{\omega+\frac{\lambda}{2\omega}\sin{\omega}}\right)^2}
+    \right\rbrace \\ e^{-i\omega} \end{pmatrix}
+\end{gather}
+%
+where $N$ is a normalization constant. From these eigenvectors, we can obtain the states of the system at the $n$th lattice site by plugging in a state $\psi_{k,n=0}(x)$ and using the eigenvalue equation for the transfer matrix $T$.
+\begin{equation}
+    \begin{pmatrix}
+    A_n^{(1/2)} \\ B_n^{(1/2)}
+    \end{pmatrix}
+    = e^{\pm i\tilde{k}n} 
+    \begin{pmatrix}
+    A_0^{(1/2)} \\ B_0^{(1/2)}
+    \end{pmatrix}
+\end{equation}
+%
+Thus, we arrive at functions $\psi_{k}(x)$, which we can write in the Bloch form
+\begin{equation}\label{eq:bloch_waves}
+    \psi_{k}^R (x) =e^{ikx} \hat{u}_{k}^{(1)}(\tilde{x}), \hspace{12pt}  \psi_{k}^L(x) =e^{-ikx} \hat{u}_{k}^{(2)}(x) 
+\end{equation}
+%
+Where $\hat{u}_{k}^{(1/2)}$ are the normalized forms of periodically repeated functions
+\begin{gather}
+      u_{k}^{(1)}(x) = 
+      \frac{A_0^{(1)} e^{i(\omega-k)(x-1)} + B_0^{(1)} e^{-i(\omega+k)(x-1)}}{A_0^{(1)}+B_0^{(1)}}\\
+       u_{k}^{(2)}(x) =
+      \frac{A_0^{(2)} e^{i(\omega+k)(x-1)} + B_0^{(2)} e^{-i(\omega-k)(x-1)}}{A_0^{(2)}+B_0^{(2)}}
+\end{gather}
+%
+normalized such that
+\begin{equation}
+\int_0^1 \hat{u}_{k} (\hat{u}_{k})^* dx = 1
+\end{equation}
+%
+Since the functions \ref{eq:bloch_waves} form a complete set, we can use them to expand our flux field as in \ref{eq:flux_field}.
+%

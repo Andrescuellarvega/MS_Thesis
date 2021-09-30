@@ -1,4 +1,4 @@
-\chapter{DCE in a Periodic Potential} %\label{ch:system}
+\chapter{DCE in a Periodic Potential} \label{ch:system}
 
 
 \section{Circuit analysis for a 1D periodic potential quantum network}\label{sec:circ_an}
@@ -7,7 +7,7 @@ We want to study the DCE in a superconducting circuit as in (Johansson). We char
 %
 \begin{equation} \label{eq:lagn1}
 \begin{split}
-\mathcal{L} = \, & \frac{1}{2} \sum_i \left( \Delta x \, C_{0} \left(\dot{\Phi}_{i}\right)^{2} - 
+\mathcal{L} = \, & \frac{1}{2} \sum_i \left( \Delta x \, C_{0} \left(\dot{\Phi}_{i}\right)^{2} \, - \, 
 \frac{\left(\Phi_{i+1}-\Phi_{i}\right)^{2}}{\Delta x \, L_{0}} \right)  \\[2mm]
 & + \sum_n \left[ \frac{1}{2} \, C_{J,\,n} \left(\dot{\Phi}_{J,\,n} \right)^{2} \, + \, 
 E_{J,\,n}(t) \cos\left(2\pi \frac{\Phi_{J,\,n}}{\Phi_0} \right) \right] \, \, .
@@ -44,7 +44,7 @@ independent of $\Phi_{J,\,n}$)
 %
 \begin{equation} \label{eq:lagn2}
 \begin{split}
-\mathcal{L} = \, & \frac{1}{2} \sum_i \left( \Delta x \, C_{0} \left(\dot{\Phi}_{i}\right)^{2} - 
+\mathcal{L} = \, & \frac{1}{2} \sum_i \left( \Delta x \, C_{0} \left(\dot{\Phi}_{i}\right)^{2} \, - \, 
 \frac{\left(\Phi_{i+1}-\Phi_{i}\right)^{2}}{\Delta x \, L_{0}} \right)  \\[2mm]
 & + \frac{1}{2} \sum_n \left( C_{J,\,n} \left(\dot{\Phi}_{J,\,n} \right)^{2} \, - \, 
  \left(\frac{2 \pi}{\Phi_0} \right)^2 E_{J,\,n}(t) \, \left( \Phi_{J,\,n} \right)^2 
@@ -55,7 +55,7 @@ independent of $\Phi_{J,\,n}$)
 From now on we assume that the intrinsic parameters of all SQUIDs are equal, i.e., 
 $C_{J,\,n} = C_J$, $\epsilon_{J,\,n} = \epsilon_J$ for all $n$ in Eqs.\,(\ref{eq:lagn2}), (\ref{eq:squidenergy}).  
 Moreover, we assume that the SQUID energy $E_{J,\,n}(t)$ in Eq.\,(\ref{eq:squidenergy}) 
-can be expanded in a constant part plus weak harmonic drive 
+can be expanded in a static part plus weak harmonic drive 
 (cp. Johansson, text page 6 bottom left)
 %
 \begin{equation} \label{eq:energyexp1}
@@ -65,12 +65,13 @@ E_{J,\,n}(t) = E_J^0 + \delta E_J \cos(\Omega_n \, t)
 where $\delta E_J \ll E_J^0$ and $\Omega_n$ is the frequency of the external drive 
 $\Phi_{\text{ext},\,n}(t)$ in Eq.\,(\ref{eq:squidenergy}).
 As indicated in Eq.\,(\ref{eq:energyexp1}), we assume that the {\em static} part 
-$E_J^0$ of $E_{J,\,n}(t)$ is the same for all SQUIDs. This assumption is crucial for our 
+$E_J^0$ of $E_{J,\,n}(t)$ is the same for all SQUIDs (i.e., indepedent of $n$). 
+This assumption is crucial for our 
 treatment of the {\em static} system (realized by a static applied magnetic flux $\Phi_{\text{ext}}$
-for all SQUIDs) as a 1D periodic lattice with period $\ell$. However, the drive frequency 
-$\Omega_n$ may be modulated along the 1D SQUID array, i.e., may differ for different SQUIDs $n$.   
-This allows us to externally control the DCE radiation generated in the 1D SQUID array 
-by different choices of the external drive frequency $\Omega_n$ as a function of $n$. 
+for all SQUIDs) as a 1D periodic lattice with period $\ell$. However, the 
+time-dependent perturbation $\sim \cos(\Omega_n \, t)$ in Eq.\,(\ref{eq:energyexp1})
+may be modulated along the 1D SQUID array, i.e., may differ for different SQUIDs $n$.   
+This allows us to externally control the DCE radiation generated in the 1D SQUID array.
 However, in our intial treatment we will assume for simplicity that the drive frequency is the 
 same for all SQUIDs, i.e., $\Omega_n = \Omega$ for all $n$, and use 
 %
@@ -82,8 +83,8 @@ With these assumptions, the Lagrangian takes the form
 %
 \begin{equation} \label{eq:lagn3}
 \begin{split}
-\mathcal{L} = \, & \frac{1}{2} \sum_i \left( \Delta x \, C_{0} \left(\dot{\Phi}_{i}\right)^{2} - 
-\frac{\left(\Phi_{i+1}-\Phi_{i}\right)^{2}}{\Delta x \, L_{0}} \right)  \\[2mm]
+\mathcal{L} = \, & \frac{1}{2} \sum_i \left( \Delta x \, C_{0} \left(\dot{\Phi}_{i}\right)^{2} \, - \, 
+\frac{\left(\Phi_{i+1} - \Phi_{i}\right)^{2}}{\Delta x \, L_{0}} \right)  \\[2mm]
 & + \frac{1}{2} \sum_n \left( C_J \left(\dot{\Phi}_{J,\,n} \right)^{2} \, - \, 
  \left(\frac{2 \pi}{\Phi_0} \right)^2 E_J(t) \, \left( \Phi_{J,\,n} \right)^2 
 \right) \, \, .
@@ -91,51 +92,109 @@ With these assumptions, the Lagrangian takes the form
 \end{equation}
 %
 with $E_J(t)$ from Eq.(\ref{eq:energyexp2}). 
-
-\color{black}
-
-If we assume the plasma frequency of the SQUIDs is far exceeding the characteristic frequencies of the circuit
-$\Phi_J/\Phi_0 \ll 1$, and that SQUIDs are operated in the phase regime where $E_J \gg \frac{(2e)^2}{2C_J}$, we can write a quadratic Lagrangian, 
-%
-\begin{equation}
-\mathcal{L}=\frac{1}{2}\sum_{i=1}^{\infty}\left(\Delta x C_{0} \left(\dot{\Phi}_{i}\right)^{2} - 
-\frac{\left(\Phi_{i+1}-\Phi_{i}\right)^{2}}{\Delta x L_{0}}\right) %
- + \frac{1}{2} \sum_{n=1}^{N}\left(C_J\left(\dot{\Phi}_{J, n}\right)^{2}-\left(\frac{2\pi}{\Phi_{0}}\right)^{2} E_J(t) \, \left( \Phi_{J,\,n} \right)^2 \right).
-\end{equation}
-%
-Following the canonical quantization procedure, we now find the Hamiltonian of the system by performing a Legendre transformation $\mathcal{H}=\sum_{i}\frac{\partial\mathcal{L}}{\partial\dot{\Phi}} \dot{\Phi} - \mathcal{L}$.
-%
-\begin{equation}
-\mathcal{H}=\frac{1}{2}\sum_{i=1}^{\infty}\left[\frac{P_i^2}{\Delta x \, C_{0}} -\left(\frac{\left(\Phi_{i+1}-\Phi_{i}\right)^{2}}{\Delta x L_{0}}\right)\right] 
- + \frac{1}{2} \sum_{n=1}^{N}\left(\frac{P_n^2}{C_J}+\left(\frac{2\pi}{\Phi_{0}}\right)^{2} E_J(t) \, \left( \Phi_{J,\,n} \right)^2 \right).
-\end{equation}
-%
-We obtain the dynamics of the system by using the Heisenberg equations of motion for $P_i$ and $P_s$. 
-In the \color{blue} continuum limit
-$(\Delta x \to 0)$, the flux field satisfies the 1-dimensional massless Klein-Gordon equation
-%
-\begin{equation}
-\frac{\partial^2\Phi(x,t)}{\partial t^2} - v^2 \, \frac{\partial^2\Phi(x,t)}{\partial x^2} = 0
-\end{equation}
-%
+Note that we make the identification $\Phi_i^{\,l} = \Phi_{J,\,n} = \Phi_i^{\,r}$ for the flux at SQUID $n$, 
+where $\Phi_i^{\,l}$ and $\Phi_i^{\,r}$ are the fluxes at adjacent nodes to the left ($l$) and right ($r$) of node $n$,
+respectively
+\color{red} (see Fig. X). 
 \color{blue}
-where $v = 1 / \sqrt{C_0 L_0}$ as the propagation speed in the CPW.
-\color{black}
 
-The Heisenberg equation for $P_n$ (in continuous limit) provides the boundary condition at the SQUID sites $x_n$.
-\begin{equation}\label{eq:BC_field}
-C_{J} \ddot{\Phi}_{n}+\hbar\left(\frac{2 \pi}{\Phi_{0}}\right)^{2} E_{j}(t) \Phi_{n} -\frac{\hbar}{L_{0}}\left(\left.\frac{\partial \Phi_{n}}{\partial x}\right|_{x_n^{+}}-\left.\frac{\partial \Phi_{n}}{\partial x}\right|_{x_n^{-}}\right)=0.
+To quantize the system, we first transform the Lagrangian $\mathcal{L}$ in Eq.\,(\ref{eq:lagn3})
+into a Hamiltonian $\mathcal{H}$ by a Legendre transformation.
+To this end, it is convenient to temporarily consider the fluxes $\Phi_i^{\,l}$, $\Phi_i^{\,r}$, and $\Phi_{J,\,n}$ 
+at SQUIDs $n$ as independent dynamic variables 
+\color{red} (see Fig. X) 
+\color{blue}
+and define 
+%
+\begin{equation} \label{eq:ham1}
+\mathcal{H} = \sum_{i} \frac{\partial\mathcal{L}}{\partial\dot{\Phi}_i} \, \dot{\Phi}_i 
+\, + \, \sum_{n} \frac{\partial\mathcal{L}}{\partial\dot{\Phi}_{J,\,n}} \, \dot{\Phi}_{J,\,n}
+\, - \, \mathcal{L} \, \, , 
+\end{equation}
+%
+resulting in
+%
+\begin{equation} \label{eq:ham2}
+\begin{split}
+\mathcal{H} = \, & \frac{1}{2} \sum_i \left( \frac{P_i^{\,2}}{\Delta x \, C_{0}} \, + \, 
+\frac{\left(\Phi_{i+1} - \Phi_{i}\right)^{2}}{\Delta x \, L_{0}} \right)  \\[2mm]
+& + \frac{1}{2} \sum_n \left( \frac{\left(P_{J,\,n}\right)^2}{C_{J}} \, + \, 
+ \left(\frac{2 \pi}{\Phi_0} \right)^2 E_J(t) \, \left( \Phi_{J,\,n} \right)^2 
+\right) \, \, .
+\end{split}
+\end{equation}
+%
+with the canonical conjugate momenta
+%
+\begin{subequations} \label{eq:mom}
+\begin{eqnarray} 
+P_i = \frac{\partial\mathcal{L}}{\partial\dot{\Phi}_i} = \Delta x \, C_0 \, \dot{\Phi}_i \label{eq:moma} \, \, \, , \\[2mm]
+P_{J,\,n} = \frac{\partial\mathcal{L}}{\partial\dot{\Phi}_{J,\,n}} =  C_J \, \dot{\Phi}_{J,\,n} \, \, \,  . \label{eq:momb}
+\end{eqnarray}
+\end{subequations}
+%
+We now identify again $\Phi_i^{\,l} = \Phi_{J,\,n} = \Phi_i^{\,r}$ and $P_i^{\,l} = P_{J,\,n} = P_i^{\,r}$
+for the fluxes and conjugate momenta at SQUIDs $n$.
+The system is quantized by turning the fluxes $\Phi_i$ and conjugate momenta $P_i$ 
+to operators with commutation relations
+%
+\begin{equation} \label{eq:cr} 
+\left[\hat{\Phi}_i, \hat{P}_j \right] = i \hbar \delta_{ij} \, \, , \quad 
+\left[\hat{\Phi}_i, \hat{\Phi}_j \right] = 0 \, \, , \quad 
+\left[\hat{P}_i, \hat{P}_j \right] = 0 \, \, \, , 
+\end{equation}
+%
+with the identifications mentioned above understood; for example, 
+$\left[\hat{\Phi}_i^{\,l}, \hat{P}_{J,\,n} \right] = \left[\hat{\Phi}_i^{\,r}, \hat{P}_{J,\,n} \right] = i \hbar$
+\color{red} (see Fig. X) 
+\color{blue}.
+
+In the CPW between the SQUIDs, the Heisenberg equation of motion 
+$\displaystyle \frac{d}{dt} \hat{P}_i = \frac{i}{\hbar} \left[\hat{\mathcal{H}}, \hat{P}_i \right]$ 
+with
+$\displaystyle \frac{d}{dt} \hat{P}_i = \Delta x \, C_0 \, \frac{d^2}{dt^2} \hat{\Phi}_i$ 
+by Eq.\,(\ref{eq:moma}) results in, using Eqs.\,(\ref{eq:ham2}) - (\ref{eq:cr}), 
+%
+\begin{equation} \label{eq:eom1}
+C_0 L_0 \, \frac{d^2}{dt^2} \hat{\Phi}_i \, = \, 
+\frac{1}{(\Delta x)^2} \left(\hat{\Phi}_{i+1} - 2 \hat{\Phi}_i +  \hat{\Phi}_{i-1} \right) \, \, .
+\end{equation}
+%
+In the continuum limit $\Delta x \to 0$ we obtain the massless Klein-Gordon equation 
+for the dynamic flux operator $\hat{\Phi}(x,t)$ in the CPW between the SQUIDs,
+%
+\begin{equation} \label{eq:eom2}
+\frac{\partial^2\hat{\Phi}(x,t)}{\partial t^2} - v^2 \, \frac{\partial^2\hat{\Phi}(x,t)}{\partial x^2} = 0 \, \, ,
+\end{equation}
+%
+where $v = 1 / \sqrt{C_0 L_0}$ is the wave propagation speed in the CPW.
+
+\color{black}
+Similarly, at the $n$th SQUID site, the Heisenberg equations of motion
+$\displaystyle \frac{d}{dt} \hat{P}_{J, n} = \frac{i}{\hbar} \left[\hat{\mathcal{H}}, \hat{P}_{J, n} \right]$ 
+with
+$\displaystyle \frac{d}{dt} \hat{P}_{J,n} = C_J \, \frac{d^2}{dt^2} \hat{\Phi}_{J, n}$ 
+by Eq.\,(\ref{eq:momb}) results in, using Eqs.\,(\ref{eq:ham2}) - (\ref{eq:cr}), 
+%
+\begin{equation}\label{BC_discrete}
+C_{J} \frac{d^2}{dt^2} \hat{\Phi}_{J,n} +\hbar\left(\frac{2 \pi}{\Phi_{0}}\right)^{2} E_{j}(t) \hat{\Phi}_{J, n} -\frac{\hbar}{L_{0}}\left(\frac{\hat{\Phi}_{i+1} - 2 \hat{\Phi}_{J, n} - \hat{\Phi}_{i-1}}{\Delta x}\right)=0.
+\end{equation}
+%
+Which, in the continuum limit $\Delta x \to 0$, results in the boundary condition for $\hat{\Phi}(x, t)$ at the SQUID sites $x = x_n$,
+%
+\begin{equation}\label{eq:BC_field_orig}
+C_{J} \frac{\partial^2 \hat{\Phi}(x_n, t)}{\partial t^2} +\hbar\left(\frac{2 \pi}{\Phi_{0}}\right)^{2} E_{j}(t) \hat{\Phi}(x_n, t) -\frac{\hbar}{L_{0}}\left(\left.\frac{\partial \hat{\Phi}(x, t)}{\partial x}\right|_{x_n^{+}}-\left.\frac{\partial \hat{\Phi}(x,t)}{\partial x}\right|_{x_n^{-}}\right)=0.
 \end{equation}
 
 \section{Periodic potential and Kronig-Penney model}\label{sec:Kronig-Penney}
 %
 \noindent
 Let us first consider the background periodic potential in the static case where we apply a DC drive so that the SQUID energy $E_J(t) = E_J^0$ is constant. Following the canonical quantization procedure, 
-\color{blue} we turn the classical flux field ${\Phi}_n(x,t)$ 
-in compartment $n$ of the periodic array \color{red} (see Fig.\,X) \color{blue}
+we turn the classical flux field ${\Phi}_n(x,t)$ 
+in compartment $n$ of the periodic array \color{red} (see Fig.\,X) \color{black}
 into a field operator $\hat{\Phi}_n(x,t)$, which is expanded in terms of 
-annihilation and creation operators $\color{blue} \hat{a}_n(k)$ and 
-$\color{blue} {\hat a}_n^\dagger(k)$:
+annihilation and creation operators $ \hat{a}_n(k)$ and 
+${\hat a}_n^\dagger(k)$:
 %
 \begin{equation} \label{eq:flux_field_orig}
     \hat{\Phi}_n(x,t) = \sqrt{\frac{\hbar}{2 C_0}} 
@@ -151,7 +210,7 @@ The annihilation and creation operators obey the commutation relations
 \end{equation}
 %
 and thus have units of $\text{length}^{1/2}$.
-Equation (\ref{eq:flux_field_orig}) also incorporates the Bloch-type functions 
+The field expansion in Eq.(\ref{eq:flux_field_orig}) also incorporates Bloch-type functions 
 %
 \begin{equation} \label{eq:psi1}
 \psi_k(x) = e^{i k x} u_k(x) \, \, ,   
@@ -165,6 +224,26 @@ the 1D wave vector $k$, and normalized such that
 \int_{-\infty}^{\infty} dx \, \psi^*_k(x) \psi_{k'}(x) = 2 \pi \, \delta(k - k') \, \, .
 \end{equation}
 %
+%
+The introduction of a periodic potential leads to a Bloch band structure similar to the one for electrons in solid state physics with energy bands determined by the dispersion relation
+\begin{equation}\label{eq:disp_rel}
+    \cos{k} = \cos{\omega} + \frac{\lambda}{2\omega}\sin{\omega}
+\end{equation}
+%
+where $\lambda$ is defined as:
+%
+\begin{equation}\label{eq:lambda}
+\lambda = \left(\frac{L_0}{\hbar}\right)  
+\left[-\omega^2 C_{J}+\hbar\left(\frac{2 \pi}{\Phi_{0}}\right)^{2} E_{j}^0\right].
+\end{equation}
+%
+%
+Allowed energy states correspond to solutions of Eq. \ref{eq:disp_rel} with frequencies $\omega$ such that
+%
+\begin{equation}\label{eq:bands_condition}
+    \left|\cos{\omega} + \frac{\lambda}{2\omega}\sin{\omega}\right|\leq 1.
+\end{equation}
+%
 The prefactor $\displaystyle{\sqrt{\frac{\hbar}{2 C_0}}}$ in Eq.\,(\ref{eq:flux_field_orig}) is chosen 
 to obtain the canonical commutation relation 
 %
@@ -173,11 +252,11 @@ to obtain the canonical commutation relation
 \end{equation}
 %
 where $\hat{P}_n(x,t) = C_0 \displaystyle{\frac{d}{dt}} \hat{\Phi}_n(x,t)$ is the 
-canonical conjugate of $\hat{\Phi}_n(x,t)$ and $C_0$ is the characteristic capacitance of the CPW per unit length. 
+canonical/ conjugate of $\hat{\Phi}_n(x,t)$ and $C_0$ is the characteristic capacitance of the CPW per unit length. 
 %
 We now rewrite Eq.\,(\ref{eq:flux_field_orig}) in terms of unitless variables 
 by expressing lenghts in units of $\ell$ and times in units of $\ell/v$
-as outlined in \color{red} Section X:  \color{blue}  
+as outlined in \color{red} Section X:  \color{black}  
 %
 \begin{equation} \label{eq:flux_field}
     \hat{\phi}_n(x,t) = 
@@ -203,169 +282,175 @@ They obey the commutation relations
 %
 All variables in Eq.\,(\ref{eq:flux_field}) are unitless by expressing lengths in units of $\ell$
 and times in units of $\ell/v$.
+
+\section{Static Flux Solution}\label{eq:Static_Flux}
 %
-\color{black}
+Given the time dependence of the flux field $\hat{\phi}_n(x,t)$, in Eq. (\ref{eq:flux_field}) we can write our boundary condition (\ref{eq:BC_field_orig}) as
 %
-%
-Given the time dependence of the flux field $\hat{\phi}_n(x,t)$, we can write our boundary condition (\ref{eq:BC_field}) as
-%
-\begin{equation}
+\begin{equation}\label{eq:BC_field}
 \left[-\omega^2 C_{J}+\hbar\left(\frac{2 \pi}{\Phi_{0}}\right)^{2} E_{j}^0\right]\hat{\phi}_n(x,t) -\frac{\hbar}{L_{0}}\left(\left.\frac{\partial \hat{\phi}_n(x,t)}{\partial x}\right|_{x_n^{+}}-\left.\frac{\partial \hat{\phi}_n(x,t)}{\partial x}\right|_{x_n^{-}}\right)=0.
 \end{equation}
 %
-By construction, we require the Bloch functions $\psi_k(x)$ to be eigenfunctions of
-%
-\begin{equation}\label{eq:bloch_eigenvalproblem}
-\left.\frac{\partial\psi_{k}(x)}{\partial x}\right|_{x_n^{+}}-\left.\frac{\partial\psi_{k}(x)}{\partial x}\right|_{x_n^{-}}=\lambda \psi_k(x),
-\end{equation}
-%
-where $\lambda$ is defined as:
-%
-\begin{equation}
-\lambda = \left(\frac{L_0}{\hbar}\right)  
-\left[-\omega^2 C_{J}+\hbar\left(\frac{2 \pi}{\Phi_{0}}\right)^{2} E_{j}^0\right]
-\end{equation}
-%
-as well as to satisfy the continuity condition
-%
-\begin{equation}\label{eq:continuity_bloch}
-\biggl.\psi_{k}(x)\biggl|_{x=x_{n}}=\biggl.\psi_{k}(x)\biggr|_{x=x_{n}^{+}}.
-\end{equation}
-%
-We express solutions as
-%
-\begin{align}
-\psi_{k,n}(x) = A_n e^{i\omega(x}-n) + B_n e^{-i\omega(x-n)},\hspace{16ex} n-1 < x < n,\\
-\psi_{k,n+1}(x) = A_{n+1} e^{i\omega(x-n-1)} + B_{n+1} e^{-i\omega(x-n-1)}, \hspace{10ex} n < x < n+1.
-\end{align}
-%
-We follow a standard procedure to find wavefunction solutions to the Kronig Penney model, employing a transfer matrix method to find solutions for $A_{n+1}, B_{n+1}$ in terms of $A_n, B_n$. Using (\ref{eq:continuity_bloch}), we can express (\ref{eq:bloch_eigenvalproblem}), with a transfer matrix
-%
-\begin{equation}
- \begin{pmatrix}
- A_{n+1} \\ B_{n+1}
- \end{pmatrix}
- = T 
- \begin{pmatrix}
- A_n \\ B_n
- \end{pmatrix}
-\end{equation}{}
-%
-We construct matrix $T=PL^{-1}VL$ by defining the following matrices 
-%
-\begin{align}
-L = \begin{pmatrix}
-1 & 1 \\
-i\omega & -i\omega
-\end{pmatrix} \\
-%
-V = \begin{pmatrix}
-1 & 0 \\
-\lambda & 1
-\end{pmatrix} \\
-%
-P = \begin{pmatrix}
-e^{i\omega} & 0 \\
-0 & e^{-i\omega}.
-\end{pmatrix}
-\end{align} 
-%
-We then find eigenvalues for $T$
-\begin{equation}
-    \mu_{(1/2)} = \cos{\omega} + \frac{\lambda}{2\omega}\sin{\omega}\mp i \sqrt{1-\left(\cos{\omega} + \frac{\lambda}{2\omega}\sin{\omega}}\right)^2}
-\end{equation}
-%
-The determinant of $T$ is 1 (det $T = 1$), thus the eigenvalues of this matrix fulfill $\mu_1 \cdot \mu_2 = 1$. We find that $|\mu_1| = |\mu_2|=1$, and thus we can define $\tilde{k}$ as $e^{\pm ik} = \mu_{(1/2)}$.\\
-We find a band structure with $k$-bands determined by the dispersion relation
-\begin{equation}
-    \cos{k} = \cos{\omega} + \frac{\lambda}{2\omega}\sin{\omega}
-\end{equation}
-%
-where physical states correspond to solutions such that
-\begin{equation}\label{eq:band_condition}
-    \left|\cos\omega} + \frac{\lambda}{2\omega}\sin{\omega}\right|\leq 1.
-\end{equation}
-%
-The (normalized) eigenvectors of $T$ are given by:
-\begin{gather}
-    \hat{V}^{(1)}
-    = N
-    \begin{pmatrix}
-    e^{i\omega}\left\lbrace-\cos{\omega} + \frac{\lambda}{2\omega}\sin{\omega} - \frac{2\omega}{\lambda}\sqrt{1-\left(\cos{\omega+\frac{\lambda}{2\omega}\sin{\omega}}\right)^2}
-    \right\rbrace \\ 1 \end{pmatrix} \\
-    \hat{V}^{(2)}
-    = N
-    \begin{pmatrix}
-    \left\lbrace-\cos{\omega} + \frac{\lambda}{2\omega}\sin{\omega} + \frac{2\omega}{\lambda}\sqrt{1-\left(\cos{\omega+\frac{\lambda}{2\omega}\sin{\omega}}\right)^2}
-    \right\rbrace \\ e^{-i\omega} \end{pmatrix}
-\end{gather}
-%
-where $N$ is a normalization constant. From these eigenvectors, we can obtain the states of the system at the $n$th lattice site by plugging in a state $\psi_{k,n=0}(x)$ and using the eigenvalue equation for the transfer matrix $T$.
-\begin{equation}
-    \begin{pmatrix}
-    A_n^{(1/2)} \\ B_n^{(1/2)}
-    \end{pmatrix}
-    = e^{\pm i\tilde{k}n} 
-    \begin{pmatrix}
-    A_0^{(1/2)} \\ B_0^{(1/2)}
-    \end{pmatrix}
-\end{equation}
-%
-Thus, we arrive at functions $\psi_{k}(x)$, which we can write in the Bloch form
-\begin{equation}\label{eq:bloch_waves}
-    \psi_{k}^R (x) =e^{ikx} \hat{u}_{k}^{(1)}(\tilde{x}), \hspace{12pt}  \psi_{k}^L(x) =e^{-ikx} \hat{u}_{k}^{(2)}(x) 
-\end{equation}
-%
-Where $\hat{u}_{k}^{(1/2)}$ are the normalized forms of periodically repeated functions
-\begin{gather}
-      u_{k}^{(1)}(x) = 
-      \frac{A_0^{(1)} e^{i(\omega-k)(x-1)} + B_0^{(1)} e^{-i(\omega+k)(x-1)}}{A_0^{(1)}+B_0^{(1)}}\\
-       u_{k}^{(2)}(x) =
-      \frac{A_0^{(2)} e^{i(\omega+k)(x-1)} + B_0^{(2)} e^{-i(\omega-k)(x-1)}}{A_0^{(2)}+B_0^{(2)}}
-\end{gather}
-%
-normalized such that
-\begin{equation}
-\int_0^1 \hat{u}_{k} (\hat{u}_{k})^* dx = 1
-\end{equation}
-%
-Since the functions \ref{eq:bloch_waves} form a complete set, we can use them to expand our flux field as in \ref{eq:flux_field}.
-%
-\section{Static Flux Solution}\label{eq:Static_Flux}
-
 We proceed to obtain solutions for the problem with applied static magnetic flux. Taking the Fourier transform of the field \ref{eq:flux_field}, expanded in terms of the bloch waves
-\begin{equation}
-    \Phi(x, \mu = \int_{-\infty}^\infty \Phi(x,t) e^{i\mu t} dt
+\begin{equation}\label{eq:field_FT}
+    \hat{\phi}_n(x, \mu) = \int_{-\infty}^\infty \hat{\phi}_n(x,t) e^{i\mu t} dt
 \end{equation}
-
-We obtain the following forms for the field:
-\begin{gather}
-    \Phi(x,\mu) = \sqrt{\frac{\hbar}{2 C_0}} \left| \left.\frac{d\omega}{dk}\right|_{\omega=\mu}\right|^{-1}\frac{1}{\sqrt{\mu}}\biggl\lbrace a_R(K) \psi^R_K(x) + a_L(K)\psi_K^L(x)\biggr\rbrace, \hspace{12pt} \mu > 0.\\
-    \Phi(x,\mu) = \sqrt{\frac{\hbar}{2 C_0}} \left| \left.\frac{d\omega}{dk}\right|_{\omega=\mu}\right|^{-1}\frac{1}{\sqrt{|\mu|}}\biggl\lbrace a_R^\dagger(K) \left[\psi^R_K(x)\right]^* + a_L^\dagger(K)\left[\psi_K^L(x)\right]^*\biggr\rbrace, \hspace{12pt} \mu < 0.
-\end{gather}
-
-Where we have used (\ref{eq:bloch_waves}), defining $K = |k|$. As well as 
+%
+We obtain the following forms for the field at the $n$th CPW segment:
+\begin{subequations} \label{eq:phi_FT}
+\begin{eqnarray}
+    \hat{\phi}_n(x, \mu) =  \left|\left.\frac{d\omega}{dk}\right|_{\omega=\mu}\right|^{-1}\frac{1}{\sqrt{\mu}}\biggl\lbrace \hat{a}_n^R(K) \psi^R_K(x) + \hat{a}_n^L(K)\psi_K^L(x)\biggr\rbrace, &\text{for } \mu > 0, \label{eq:phi_FT_a}\\
+    \hat{\phi}_n(x, \mu) = \left|\left.\frac{d\omega}{dk}\right|_{\omega=\mu}\right|^{-1}\frac{1}{\sqrt{|\mu|}}\biggl\lbrace [\hat{a}^R_n(K)]^\dagger \left[\psi^R_K(x)\right]^* + [\hat{a}_n^L(K)]^\dagger\left[\psi_K^L(x)\right]^*\biggr\rbrace, &\text{for } \mu < 0. \label{eq:phi_FT_b}
+\end{eqnarray}
+\end{subequations}
+%
+Where defined $K = |k|$, and have used forms of the Bloch functions (see Appendix \ref{ch:appendix_bloch})
+%
+\begin{equation}\label{eq:bloch_waves}
+    \psi_{K}^R (x) =e^{iKx} u_{K}^{(1)}(x), \hspace{12pt}  \psi_{K}^L(x) =e^{-iKx} u_{K}^{(2)}(x),
+\end{equation}
+%
+as well as 
 \begin{equation}
-    a(K) = 
+    \hat{a}_n(K) = 
     \begin{cases}
-    a_R(K) &\text{if k > 0,}\\
-    a_L(K) &\text{if k < 0.}
+    \hat{a}_n^R(K), &\text{if k > 0,}\\
+    \hat{a}_n^L(K), &\text{if k < 0.}
     \end{cases}
 \end{equation}
+%
+Taking the Fourier transform of our $n$th site boundary condition (\ref{eq:BC_field}) for positive frequencies (\ref{eq:phi_FT_a}), we arrive at a relation,
 
-
-
-
-Which we input into the  boundary condition \ref{eq:BC_field} to obtain
-
-\begin{equation}
-    \left[a_R(K) - b_R(K)\right]\mathcal{A}_K + \left[a_L(K) - b_L(K)\right]\mathcal{A}_K^* = 0 
+\begin{equation}\label{eq:BC_static_1}
+\begin{split}
+    \left[-\mu^2 C_{J}+\hbar\left(\frac{2 \pi}{\Phi_{0}}\right)^{2} E_{j}^0\right].
+    \left\lbrace\hat{a}^R(K) \psi^R_K(n) + \hat{a}^L(K) \psi^L_K(n) \right\rbrace =
+    \\[2mm]
+       \left(\frac{\hbar}{L_0}\right) 
+    \left\lbrace\hat{b}^R(K) \left.\frac{\partial \psi^R_K(x)}{\partial x}\right|_{x=n^-} +\hat{b}^L(K) \left.\frac{\partial \psi^L_K(x)}{\partial x}\right|_{x=n^-}\right\rbrace.
+    \\[2mm]
+    -
+    \left(\frac{\hbar}{L_0}\right) 
+    \left\lbrace\hat{a}^R(K) \left.\frac{\partial \psi^R_K(x)}{\partial x}\right|_{x=n^+} +\hat{a}^L(K) \left.\frac{\partial \psi^L_K(x)}{\partial x}\right|_{x=n^+} \right\rbrace
+\end{split}
 \end{equation}
-
-where we define
-\begin{gather}
-    \mathcal{C}_K = \left.u_K(x)\right|_{x=x_s}\\
-    \mathcal{D}_K = \left.u_K^{\prime}(x)\right|_{x=x_s}\\
-    \mathcal{A}_K = ik\mathcal{C}_K + \mathcal{D}_K
+%
+Where we have omitted the $n$ subscript in our annihilation/creation operators and defined $\hat{b} = \hat{a}_{n+1}$.
+We use the fact that the Bloch functions $\psi_K(x)$ are, by construction, eigenfunctions of the same boundary condition (see Appendix \ref{ch:appendix_bloch}). Then, we can write our boundary condition in the form
+%
+\begin{equation}
+    \left[\hat{a}^R(K) - \hat{b}^R(K)\right]\left.\frac{\partial \psi^R_K(x)}{\partial x}\right|_{x=n^+}
+    +
+    \left[\hat{a}^L(K) - \hat{b}^L(K)\right]\left.\frac{\partial \psi^L_K(x)}{\partial x}\right|_{x=n^+} = 0 
+\end{equation}
+%
+Using (eq. \ref{eq:bloch_waves}) and the relation $u_K(x) = u^*_K(x)$ (see Appendix \ref{ch:appendix_bloch}),
+%
+\begin{equation}\label{eq:BC_static_2}
+\begin{split}
+    \left[\hat{a}^R(K) - \hat{b}^R(K)\right]\left.\left\lbrace i K \, u_K(x) + \frac{\partial u_K(x)}{\partial x}\right\rbrace\right|_{x=n}\,e^{i K n}
+    \\[2mm]
+    +
+    \left[\hat{a}^L(K) - \hat{b}^L(K)\right]\left.\left\lbrace-i K\, u_K(x) + \frac{\partial u_K(x)}{\partial x}\right\rbrace\right|_{x=n}\,e^{-i K n} = 0 
+\end{split}
+\end{equation}
+%
+We now define the short hand notations
+%
+\begin{gather}\label{eq:caligraphics}
+    \mathcal{C}_K = \left.u_K(x)\right|_{x=n}\\
+    \mathcal{D}_K = \left.\frac{\partial u_K(x)}{\partial x}\right|_{x=n}\\
+    \mathcal{A}_K = iK\mathcal{C}_K + \mathcal{D}_K
 \end{gather}
+%
+As well as, 
+\begin{subequations}\label{eq:cr_an_position_dept}
+\begin{eqnarray}
+    \hat{a}^R_K(x) = \hat{a}^R(K)\,e^{i K x},
+    \\
+    \hat{a}^L_K(x) = \hat{a}_L(K)\,e^{-i K x}. 
+\end{eqnarray}
+\end{subequations}
+%
+Similarly for $\hat{b}(K)$. We can now write a clean form for our boundary condition using (Eq. \ref{eq:caligraphics} - \ref{eq:cr_an_position_dept}),
+%
+\begin{equation}\label{eq:BC_static_3}
+    \left[\hat{a}^R_K(n) - \hat{b}_K^R(n)\right] \mathcal{A}_K
+    +
+    \left[\hat{a}^L_K(n) - \hat{b}^L_K(n)\right]\mathcal{A}^*_K = 0 
+\end{equation}
+%
+We also impose the requirement that $\hat{\phi}_n(x,\mu)$ is continuous at the boundary $x=n$. Which, using (Eq. \ref{eq:bloch_waves}, we can express as,
+%
+\begin{equation}\label{eq:continuity_static}
+    \left[\hat{a}^R_K(n) + \hat{a}^L_K(n)\right]
+    =
+    \left[\hat{b}^R_K(n) + \hat{b}^L_K(n)\right]
+\end{equation}
+%
+Using (Eq. \ref{eq:BC_static_3}, \ref{eq:continuity_static}), we arrive at the relations between annihilation coefficients for static applied magnetic flux in our SQUIDs ($E_J(t)= E^0_J$),
+%
+\begin{subequations}\label{eq:static_solutions}
+\begin{eqnarray}
+    \hat{b}^R_K(n) = \hat{a}^R_K(n),
+    \\
+    \hat{b}^L_K(n) = \hat{a}^L_K(n).
+\end{eqnarray}
+\end{subequations}
+%
+Similar equations can be obtained for creation operators by using (Eq. \ref{eq:phi_FT_b}), for $\mu<0$. Note that these solutions are only valid for allowed frequencies $\mu$, given by the band structure of the lattice, i.e. frequencies $\mu$ satisfying (Eq. \ref{eq:bands_condition}). Now that we have obtained solutions for the static case, it is time to analyse the case of an externally driven system.
 
+\section{Weak Harmonic Drive Solution}\label{eq:Static_Flux}
+
+We proceed to drive our system by applying an external flux to the SQUID sites, such that the form of the time-dependent Josephson energy is:
+%
+\begin{equation}\label{eq:energy_t}
+\begin{split}
+    E_J(t) = E^0_J + \epsilon(t),
+    \\
+    \text{where,} \hspace{2mm}
+    \epsilon(t) = \delta E^0_J \cos(\Omega t). 
+\end{split}
+\end{equation}
+%
+We consider a weak harmonic drive, such that $\frac{\delta E^0_J}{E^0_j} \ll 1$. We can now write the Fourier transformed boundary condition for a time-dependent drive $E_J(t)$. Using our results for the static case (Eq. \ref{eq:BC_static_3}), we can express (Eq. \ref{eq:BC_field}) as a static part plus a dynamic part,
+%
+\begin{equation}\label{eq:BC_harmonic_drive}
+\begin{split}
+    \left(\frac{\hbar}{L_0}\right)
+    \left|\left.\frac{d\omega}{dk}\right|_{\omega=\mu}\right|^{-1}
+    \frac{1}{\sqrt{\mu}}
+    \left\lbrace
+    \left[\hat{a}^R_K(n) - \hat{b}_K^R(n)\right] \mathcal{A}_K +
+    \left[\hat{a}^L_K(n) - \hat{b}^L_K(n)\right]\mathcal{A}^*_K
+    \right\rbrace
+    \\[4mm]
+    +\hspace{2mm}
+    \hbar \, \left(\frac{2\pi}{\Phi_0}\right)^2
+    \frac{1}{\sqrt{\mu}}
+    \int_{-\infty}^{\infty} d \mu
+    \sqrt{\left| \mu' \right|}\,
+    \delta g(\mu, \mu')
+    \hat{\phi}(x, \mu') = 0.
+\end{split}
+\end{equation}
+%
+Where we have defined:
+\begin{gather}\label{eq:Energy_FT}
+    g(\mu, \mu') = \frac{1}{2 \pi} \sqrt{\frac{|\mu|}{|\mu'|}}
+    \int_{-\infty}^{\infty} dt \, E_J(t) \, e^{i(\mu - \mu')t}
+    = E_J^0 + \delta g(\mu, \mu').
+    \\
+    \text{where, }\hspace{2mm}\delta g(\mu, \mu') = \frac{1}{2 \pi} \sqrt{\frac{|\mu|}{|\mu'|}}
+    \int_{-\infty}^{\infty} dt \, \epsilon(t) \, e^{i(\mu - \mu')t}
+\end{gather}
+%
+Which, for a weak harmonic drive $\epsilon(t)$ of the form (Eq. \ref{eq:energy_t}),
+%
+\begin{equation}
+    \delta g = \delta E_J^0
+    \left[
+    \delta (\mu' - \mu - \Omega) +
+    \delta(\mu' - \mu + \Omega)
+    \right]
+\end{equation}
