@@ -9,10 +9,10 @@
 
 % Switch this line to the final option when submitting your thesis.
 % This will correct counts and remove labels that are shown during draft mode
-\documentclass[masters,draft]{UTRGVthesis}
+%\documentclass[masters,draft]{UTRGVthesis}
 %\documentclass[phd,draft]{UTRGVthesis}
 %\documentclass[masters,final]{UTRGVthesis}
-%\documentclass[masters,final, nodedication, noacknowledgments]{UTRGVthesis}
+\documentclass[masters,final, nodedication]{UTRGVthesis}
 
 
 % Load your packages below.
@@ -29,8 +29,7 @@
 \usepackage{amsmath}
 
 \usepackage{xcolor}   % added to show colors
-
-
+\usepackage{pdfpages}  % added to include PDF pages for appendices
 
 % Uncomment the line below to check if text is aligned to margins
 %\margins
@@ -56,7 +55,7 @@
 
 
 % Insert your graduation date here
-\Month{Dec}
+\Month{December}
 \Year{2021}
 
 
@@ -74,7 +73,7 @@
 % Insert the members of your committee here
 % You can also give MemberA a special title
 \MemberA{Dr. Hamidreza Ramezani}  %\MemberATitle{Co-Chair of Committee}
-\MemberB{}
+\MemberB{Dr. Soumya D. Mohanty}
 \MemberC{}
 \MemberD{}
 \MemberE{}
@@ -85,8 +84,7 @@
 % generated.  Specify the "final" option in the \documentclass to update the
 % counts to the correct values.
 \Abstract{%
-An abstract is a brief summary often used to help the reader quickly
-ascertain the paper's purpose.
+\input{chapters/abstract}
 }
 
 
@@ -98,15 +96,14 @@ Dedication should be simple, in good taste, and fit on one page.
 
 % Acknowledge those who helped and supported you here. This is optional.
 \Acknowledgments{%
-Acknowledgements should be simple, in good taste, and fit on one page.
+\input{chapters/acknowledgments}
 }
 
 
 % Insert your biographical sketch here.
 \BiographicalSketch{%
-A brief biographical sketch of the student is required as part of each thesis.
+Some biography goes here.
 }
-
 
 
 \begin{document}
@@ -121,7 +118,7 @@ A brief biographical sketch of the student is required as part of each thesis.
 
 
 % These insert a table of contents, list of tables, and list of figures
-%\tableofcontents
+\tableofcontents
 %\listoftables
 %\listoffigures
 
@@ -137,8 +134,9 @@ A brief biographical sketch of the student is required as part of each thesis.
 % It's a good idea to split your thesis up into different files and use
 % the \input command
 \input{chapters/introduction.tex}
-%\input{chapters/system.tex}
-\input{chapters/system_alt}
+\input{chapters/system_draft.tex}
+\input{chapters/results.tex}
+
 % This makes the bibliography.
 % Enter your references in the BibTex file "references.bib"
 % You can find bibtex info from Google Scholar.
@@ -149,9 +147,12 @@ A brief biographical sketch of the student is required as part of each thesis.
 % Uncomment the \appendix macro below for appendices
 % Insert appendix chapters after the macro
 %\appendix
-%\input{chapters/appendix_bloch}
+%\input{chapters/appendices/appendix_bloch}
+%\chapter{Mathematica file for Kronig-Penney Model}\label{ch:Mathematica_KP}
+%\includepdf[pages=-]{chapters/appendices/Kronig_Penney_model_transfer_matrix.pdf}
+%\input{chapters/appendices/KP_Mathematica/Kronig_Penney_model_transfer_matrix}
 
 % This inserts your Biographical Sketch
-%\biographypage
+\biographypage
 
 \end{document}
