@@ -12,8 +12,7 @@
 %\documentclass[masters,draft]{UTRGVthesis}
 %\documentclass[phd,draft]{UTRGVthesis}
 %\documentclass[masters,final]{UTRGVthesis}
-\documentclass[masters,final, nodedication]{UTRGVthesis}
-
+\documentclass[masters,final, nodedication]{UTRGVthesis}  % switch between draft/final for faster compilation % nodedication, noacknowledgements
 
 % Load your packages below.
 % Make hyperref and showkeys come at the end of your loaded packages
@@ -30,6 +29,7 @@
 
 \usepackage{xcolor}   % added to show colors
 \usepackage{pdfpages}  % added to include PDF pages for appendices
+
 
 % Uncomment the line below to check if text is aligned to margins
 %\margins
@@ -89,9 +89,7 @@
 
 
 % You can dedicate your paper here.  This is optional.
-\Dedication{%
-Dedication should be simple, in good taste, and fit on one page.
-}
+\Dedication{}
 
 
 % Acknowledge those who helped and supported you here. This is optional.
@@ -102,7 +100,7 @@ Dedication should be simple, in good taste, and fit on one page.
 
 % Insert your biographical sketch here.
 \BiographicalSketch{%
-Some biography goes here.
+\input{chapters/biography}
 }
 
 
@@ -114,13 +112,13 @@ Some biography goes here.
 
 % This command makes the formal preliminary pages.
 % You can comment it out during the drafting process if you want to save paper.
-%\makepreliminarypages
+\makepreliminarypages
 
 
 % These insert a table of contents, list of tables, and list of figures
 \tableofcontents
 %\listoftables
-%\listoffigures
+\listoffigures
 
 
 % This starts regular page counting in Arabic numerals
@@ -146,11 +144,11 @@ Some biography goes here.
 
 % Uncomment the \appendix macro below for appendices
 % Insert appendix chapters after the macro
-%\appendix
+\appendix
 %\input{chapters/appendices/appendix_bloch}
 %\chapter{Mathematica file for Kronig-Penney Model}\label{ch:Mathematica_KP}
-%\includepdf[pages=-]{chapters/appendices/Kronig_Penney_model_transfer_matrix.pdf}
-%\input{chapters/appendices/KP_Mathematica/Kronig_Penney_model_transfer_matrix}
+\includepdf[pages=-]{chapters/appendices/Kronig_Penney_model_transfer_matrix.pdf}
+%\input{chapters/appendices/KP_Mathematica/Kronig_Penney_model_transfer_matrix}\label{ch:Mathematica_KP}
 
 % This inserts your Biographical Sketch
 \biographypage

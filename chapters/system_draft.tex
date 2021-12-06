@@ -7,9 +7,9 @@
 
 \subsection{Lagrangian formulation}
 \noindent
-We now proceed to the study of the DCE in our proposed system, which consists of a periodic array of CPWs connected by SQUIDs (see Fig. \ref{fig:circuit_diagram}). To define the Lagrangian we discretize the system into 
+We now proceed to the study of the DCE in our proposed system, which consists of a periodic array of CPWs connected by SQUIDs (see Figure \ref{fig:circuit_diagram}). To define the Lagrangian we discretize the system into 
 segments $i$ of length $\Delta x$ with capacitance $\Delta x \, C_0$, inductance $\Delta x \, L_0$, and dynamical fluxes $\Phi_i(t)$ 
-(see Section \ref{sec:SC_and_SQUIDs}).
+(see \cite{Vool2017}).
 Assuming symmetric SQUIDs, the Lagrangian density for this system is 
 %
 \begin{equation} \label{eq:lagn1}
@@ -20,6 +20,9 @@ Assuming symmetric SQUIDs, the Lagrangian density for this system is
 E_{J,\,n}(t) \cos\left(2\pi \frac{\Phi_{J,\,n}}{\Phi_0} \right) \right]
 \end{split}
 \end{equation}
+where a dot over a symbol indicates a time derivative, e.g., 
+$\displaystyle \dot{\Phi}_i = \frac{\partial}{\partial t} \Phi_i$.
+The terms on the r.h.s.\,of the first line of Eq.\,(\ref{eq:lagn1}) describe sections of the CPW between the SQUIDs. %
 %
 \begin{figure}
     \centering
@@ -29,10 +32,8 @@ E_{J,\,n}(t) \cos\left(2\pi \frac{\Phi_{J,\,n}}{\Phi_0} \right) \right]
     \label{fig:circuit_diagram}
 \end{figure}
 %
-where a dot over a symbol indicates a time derivative, e.g., 
-$\displaystyle \dot{\Phi}_i = \frac{\partial}{\partial t} \Phi_i$.
-The terms on the r.h.s.\,of the first line of Eq.\,(\ref{eq:lagn1}) describe sections of the CPW between the SQUIDs. 
-
+%
+\newpage
 The second line of Eq.\,(\ref{eq:lagn1}) describes a periodic array of SQUIDs indexed by $n$ 
 with effective capacitance $C_{J,\,n}$ and flux $\Phi_{J,\,n}$ at node $n$, where 
 the subscript $J$ stands for the two Josephson junctions of a SQUID.
@@ -71,7 +72,7 @@ independent of $\Phi_{J,\,n}$)
 %
 Note that we make the identification $\Phi_i^{\,l} = \Phi_{J,\,n} = \Phi_i^{\,r}$ for the flux at SQUID $n$, 
 where $\Phi_i^{\,l}$ and $\Phi_i^{\,r}$ are the fluxes at adjacent nodes to the left ($l$) and right ($r$) of 
-node $n$, respectively (see Fig. \ref{fig:circuit_diagram}). 
+node $n$, respectively (see Figure \ref{fig:circuit_diagram}). 
 
 From now on, we assume that the intrinsic device parameters of all SQUIDs are equal, i.e., 
 $C_{J,\,n} = C_J$, $\epsilon_{J,\,n} = \epsilon_J$ for all $n$ in Eqs.\,(\ref{eq:lagn2}), (\ref{eq:squidenergy}).  
@@ -152,7 +153,7 @@ to operators $\hat{\Phi}_i(t)$, $\hat{P}_i(t)$ with equal-time commutation relat
 %
 with the identifications mentioned above; for example, 
 $\left[\hat{\Phi}_i^{\,l}, \hat{P}_{J,\,n} \right] = 
-\left[\hat{\Phi}_i^{\,r}, \hat{P}_{J,\,n} \right] = i \hbar$ (see Fig. \ref{fig:circuit_diagram}).
+\left[\hat{\Phi}_i^{\,r}, \hat{P}_{J,\,n} \right] = i \hbar$ (see Figure \ref{fig:circuit_diagram}).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -211,7 +212,7 @@ C_{J} \, \frac{d^2}{dt^2} \hat{\Phi}_{J,\,n} \, + \left(\frac{2 \pi}{\Phi_{0}} \
 \end{equation}
 %
 where $\hat{\Phi}_{i-1}$ and $\hat{\Phi}_{i+1}$ are adjacent nodes to the left and right of 
-$\hat{\Phi}_i^{\,l} = \hat{\Phi}_{J,\,n} = \hat{\Phi}_i^{\,r}$, respectively (see Fig. \ref{fig:circuit_diagram}). 
+$\hat{\Phi}_i^{\,l} = \hat{\Phi}_{J,\,n} = \hat{\Phi}_i^{\,r}$, respectively (see Figure \ref{fig:circuit_diagram}). 
 In the continuum limit $\Delta x \to 0$ we obtain the boundary condition for $\hat{\Phi}(x, t)$ 
 at the SQUID sites $x_n$
 %
@@ -264,7 +265,7 @@ C_{J} \, \frac{\partial^2 \hat{\Phi}(x_n, t)}{\partial t^2} \, +
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Boundary condition in frequency domain}\label{sec:BC_in_frequency_domain}
+\subsection{Boundary condition in the frequency domain}\label{sec:BC_in_frequency_domain}
 %
 \noindent
 We will generally work in the frequency domain instead of the time domain by 
@@ -295,7 +296,7 @@ in Eq.\,(\ref{eq:BC_field_orig}) generates a coupling of modes with different fr
 %%
 In large parts of this thesis we will use unitless variables by expressing lengths in units of $\ell$
 and times in units of $\ell/v$ where $\ell$ is the distance between SQUIDs in the periodic array 
-(see Fig. \ref{fig:circuit_diagram})
+(see Figure \ref{fig:circuit_diagram})
 and $v = 1 / \sqrt{C_0 L_0}$ is the speed of light in the CPW in Eq.\,(\ref{eq:eom2}).  
 %
 %We thus can introduce a unitless field operator by
@@ -308,8 +309,9 @@ and $v = 1 / \sqrt{C_0 L_0}$ is the speed of light in the CPW in Eq.\,(\ref{eq:e
 %the factor of 2 in the square root is for convenience.
 The boundary condition (\ref{eq:BC_freq_static}) can be expressed in terms of unitless parameters
 by multiplying both sides of Eq.\,(\ref{eq:BC_freq_static}) by $\ell \, L_0$ resulting in
+%
 \footnote{We use the same symbol $x$ for the original position variable and its 
-unitless version (position in units of $\ell$) to keep the notation reasonably simple.}
+unitless version (position in units of $\ell$) to keep the notation simple.}
 %
 \begin{equation}\label{eq:BC_freq_static_unitless}
 \epsilon(\omega) \hat{\varphi}(n, \omega) \, = \, 
@@ -330,6 +332,7 @@ From now on we assume for simplicity that the SQUID plasma frequency $\omega_p$ 
 large so that we can neglect the term $C_{J} \, \omega^2$ in Eq.\,(\ref{eq:epsilon}) compared to 
 the other term \cite{Johansson2010}
 (cp.\,text below Eq.\,(\ref{eq:squidenergy})), i.e., we will use the $\omega$-independent parameter
+\newpage
 %
 \begin{equation} \label{eq:epsilon2}
 \epsilon \, = \, \ell \left(\frac{2 \pi}{\Phi_{0}}\right)^{2} E_J^0 L_0 \, \, .
@@ -355,7 +358,7 @@ of the SQUID array to this effective length $L_{\text{eff}}^0$.
 \noindent
 The Kronig-Penney model is a simplified model for an electron in a 1D periodic potential
 (see \cite{Kittel1996_Solid_State}).
-Modeling the periodic potential as a Dirac comb (see Fig. \ref{fig:dirac_comb}) with amplitude $u>0$
+Modeling the periodic potential as a Dirac comb (see Figure \ref{fig:dirac_comb}) with amplitude $u>0$
 and lattice constant $\ell$, the time-independent Schr\"odinger equation reads
 %
 \begin{equation} \label{eq:kpschrod}
@@ -365,11 +368,10 @@ and lattice constant $\ell$, the time-independent Schr\"odinger equation reads
 where $\psi(x)$ is the wave function, $m$ the mass, and $E$ the energy 
 of the electron.
 %
-\begin{figure}[h]
+\begin{figure}
     \centering
-    \includegraphics[width=0.8\textwidth, keepaspectratio]{figures/system/dirac_comb.png}
-    \caption{Diagrammatic representation of Dirac comb potential as an infinite series 
-    of Dirac delta distributions placed at intervals $\ell$.}
+    \includegraphics[width=\textwidth, keepaspectratio]{figures/system/dirac_comb.png}
+    \caption{Diagrammatic representation of Dirac comb potential as an infinite series of Dirac delta distributions placed at intervals $\ell$.}
     \label{fig:dirac_comb}
 \end{figure}
 %
@@ -388,6 +390,7 @@ with respect to $x$, and
 \end{equation}
 %
 are unitless (re-scaled) versions of $u$ and $E$.
+\newpage
 Integrating Eq.\,(\ref{eq:kpschrod_unitless}) over a small region about  
 $n$ according to $\displaystyle \int_{n - \delta x}^{n + \delta x} dx$ \,
 followed by the limit $\delta x \to 0$ yields
@@ -471,8 +474,7 @@ B_n \, \exp\left[-i q (x-n) \right] \, \, , \quad n-1 < x < n \, \, ,
 and to determine the $n$-dependent coefficients $A_n$, $B_n$ by the boundary conditions 
 (\ref{eq:BC_freq_static_unitless_2}) using a transfer matrix approach.
 The extra terms $\exp(- i q n)$, $\exp(i q n)$ in Eq.\,(\ref{eq:kpansatz}) were introduced 
-for computational convenience (see 
-Mathematica notebook in Appendix M).
+for computational convenience  (see Mathematica notebook in Appendix \ref{ch:Mathematica_KP}).
 %
 We find solutions for the Kronig-Penney-type model defined by 
 Eqs.\,(\ref{eq:eom3}), (\ref{eq:BC_freq_static_unitless_2})
@@ -515,14 +517,14 @@ The frequency bands are determined by the relation
 with $\epsilon$ defined in Eq.\,(\ref{eq:epsilon2}) and included in the boundary condition 
 (\ref{eq:BC_freq_static_unitless_2}). 
 Since the left-hand side of Eq.\,(\ref{eq:disp_rel}) has range $[-1,1]$ allowed frequencies 
-$\omega$ are determined by the condition (see Fig.\,\ref{fig:band_condition})
+$\omega$ are determined by the condition (see Figure\,\ref{fig:band_condition})
 %
 \begin{equation}\label{eq:bands_condition}
     \left|\cos{\omega} + \frac{\epsilon}{2\omega}\sin{\omega}\right| \leq 1 \, \, .
 \end{equation}
 %
 For allowed frequencies $\omega$, the function $k(\omega)$ is given by
-(using the principal value range of the $\arccos$ function) (see Fig.\,\ref{fig:komega})
+(using the principal value range of the $\arccos$ function) (see Figure\,\ref{fig:komega})
 %
 \begin{equation}\label{eq:disp_rel_k}
     k(\omega) = \arccos\left[ \cos{\omega} + \frac{\epsilon}{2\omega}\sin{\omega} \right] \, \in \, [0, \pi] \, \, .
@@ -536,36 +538,36 @@ constant is 1).
 Since $\omega_{\, \nu}(k) = \omega_{\, \nu}(-k)$ by symmetry of the lattice, 
 it is sufficient to consider positive wave vectors $k>0$. 
 A solution 
-of Eq.\,(\ref{eq:disp_rel_k}) for $\omega_{\, \nu}(k)$ obtained by the Mathematica function ParametricPlot 
-by graphically inverting the function $k(\omega)$
-(see Appendix \ref{ch:Mathematica_KP}) is shown in Figure \ref{fig:omegak}
+of Eq.\,(\ref{eq:disp_rel_k}) for $\omega_{\, \nu}(k)$ obtained 
+by graphically inverting the function $k(\omega)$ using the 
+Mathematica function ParametricPlot (see Appendix \ref{ch:Mathematica_KP}) is shown in Figure \ref{fig:omegak}
 %
 \footnote{The dispersion relation $\omega_{\, \nu}(k)$ resulting from Eq.\,(\ref{eq:disp_rel_k}) cannot be 
 calculated in closed form. Our calculations will therefore use the inverse function $k(\omega)$,
 which is directly given in analytical form by Eq.\,(\ref{eq:disp_rel_k}). See Section \ref{subsec:sq}.}.
 
 \begin{figure}
-    %\centering
+    \centering
     \includegraphics[width=0.8\textwidth, keepaspectratio]{figures/system/u.png}
     \caption{(a) Real part and (b) imaginary part of the function $u_{\nu,\,k}(x)$ 
     for $0 \le x \le 1$ for the Bloch function 
     $\psi_{\nu,\,k}(x) = e^{i k x} u_{\nu,\,k}(x)$ in Eq.\,(\ref{eq:psi1}) for $\epsilon=5$. 
-    Here $\omega=2$, i.e., $k = k(2)$ and $\nu=1$ (see Fig.\,\ref{fig:omegak} below).}
+    Here $\omega=2$, i.e., $k = k(2)$ and $\nu=1$ (see Figure\,\ref{fig:omegak} below).}
     \label{fig:u}
 \end{figure}
 
 \begin{figure}
-    %\centering
+    \centering
     \includegraphics[width=0.8\textwidth, keepaspectratio]{figures/system/psi.png}
     \caption{(a) Real part and (b) imaginary part of the Bloch function 
     $\psi_{\nu,\,k}(x) = e^{i k x} u_{\nu,\,k}(x)$ in Eq.\,(\ref{eq:psi1}). 
-    Parameter values as in Fig.\,\ref{fig:u}.}  
+    Parameter values as in Figure\,\ref{fig:u}.}  
     \label{fig:psi}
 \end{figure}
-
+%
 \begin{figure}
-    %\centering
-    \includegraphics[width=0.8\textwidth, keepaspectratio]{figures/system/cosk.png}
+    \centering
+    \includegraphics[width=0.7\textwidth, keepaspectratio]{figures/system/cosk.png}
     \caption{Frequency bands and gaps for the Kronig-Penney-type model defined by 
     Eqs.\,(\ref{eq:eom3}) and (\ref{eq:BC_freq_static_unitless_2}).
     Shown is the function
@@ -574,15 +576,15 @@ which is directly given in analytical form by Eq.\,(\ref{eq:disp_rel_k}). See Se
     $|f(\omega)| \le 1$ (see Eq.\,(\ref{eq:bands_condition})). 
     Modes with $|f(\omega)| \le 1$
     are allowed and can freely propagate through the one-dimensional periodic structure
-    (see Fig.\,\ref{fig:dirac_comb}).
+    (see Figure\,\ref{fig:dirac_comb}).
     Modes with $|f(\omega)| > 1$ decay exponentially and are therefore forbidden, 
     resulting in frequency gaps (shown shaded in the figure).}
     \label{fig:band_condition}
 \end{figure}
-
+%
 \begin{figure}
-    %\centering
-    \includegraphics[width=0.8\textwidth, keepaspectratio]{figures/system/komega.png}
+    \centering
+    \includegraphics[width=0.7\textwidth, keepaspectratio]{figures/system/komega.png}
     \caption{Inverse dispersion relation $k(\omega) \in [0,\pi]$ 
     for allowed frequencies $\omega$ given by Eq.\,(\ref{eq:disp_rel_k}) for $\epsilon=5$. 
     The band gaps are shown shaded.}  
@@ -590,13 +592,13 @@ which is directly given in analytical form by Eq.\,(\ref{eq:disp_rel_k}). See Se
 \end{figure}
 
 \begin{figure}
-    %\centering
+    \centering
     \includegraphics[width=0.4\textwidth, keepaspectratio]{figures/system/omegak.png}
     \caption{Dispersion relation $\omega(k)$ with frequency bands $\nu$ resulting from 
     $\cos k = \cos{\omega} + \frac{\epsilon}{2 \omega} \sin{\omega}$ for $\epsilon=5$
-    in the reduced zone scheme (see Eq.\,(\ref{eq:bands_condition})). 
+    in the reduced zone scheme (see Eq.\,(\ref{eq:disp_rel_k})). 
     The frequency gaps are shown shaded. The $k$-interval $[-\pi,\pi]$ 
-    corresponds to the first Brillouin zone of the reciprocal lattice in 
+    is the first Brillouin zone of the reciprocal lattice in 
     unitless variables where the lattice constant is equal to 1.
     Modes with $k>0$ are moving to the right and modes with $k<0$
     are moving to the left.}
@@ -647,7 +649,7 @@ introduced below Eq.\,(\ref{eq:eom1}), with time-dependent
 boundary conditions (\ref{eq:BC_field_orig}) at the SQUID sites 
 $x_n = n \ell$, in second quantized form using annihilation and creation operators $\hat{a}_n(\nu,k)$ and 
 ${\hat a}_n^\dagger(\nu,k)$ for wave vector $k$ and frequency band $\nu$
-(see Fig.\,\ref{fig:system} on page \pageref{fig:system} for a depiction of 
+(see Figure \,\ref{fig:system} on page \pageref{fig:system} for a depiction of 
 sites $n$ and sections $n$ of the SQUID array):  
 %
 \begin{equation} \label{eq:flux_field_orig}
@@ -662,11 +664,9 @@ sites $n$ and sections $n$ of the SQUID array):
 %
 where $\psi_{\nu,\,k}(x)$ are Bloch functions with dispersion relation $\omega_{\,\nu}(k)$ defined for 
 the {\em static} system, 
-\color{red} and the $k$-integration is over the first Brillouin zone 
+and the $k$-integration is over the first Brillouin zone 
 $\displaystyle{\left[-\frac{\pi}{\ell}\, , \, \frac{\pi}{\ell} \right]}$
-of the reciprocal lattice
-\color{black}
-(see Section \ref{subsec:kpsol}). The Bloch functions have the form (see Eq.\,(\ref{eq:psi1})) 
+of the reciprocal lattice (see Section \ref{subsec:kpsol}). The Bloch functions have the form (see Eq.\,(\ref{eq:psi1})) 
 %
 \begin{equation} \label{eq:psi2}
 \psi_{\nu,\,k}(x) = e^{i k x} u_{\nu,\,k}(x) \, \, ,
@@ -719,15 +719,14 @@ is determined by the equal-time commutation relation for section $n$ of the CPW,
 $\left[\hat{\Phi}_n(x,t), \hat{\overline{P}}_n(x',t) \right] = i \hbar \delta(x - x')$ 
 in Eq.\,(\ref{eq:cr2}), using Eqs.\,(\ref{eq:cra_orig}) and (\ref{eq:psi1_comp_orig}).
 
-\color{blue}
 The dispersion relation $\omega_{\,\nu}(k)$ used in
 Eq.\,(\ref{eq:flux_field_orig}) cannot be calculated in closed form. 
 Conversely, the inverse function $k(\omega) \in [0,\pi]$ is uniquely defined for given 
-$\omega = \omega_{\,\nu}$ and is directly available in analytical form by Eq.\,(\ref{eq:disp_rel_k})
-\color{red} (see Figure $k(\omega)$) \color{black}
+$\omega = \omega_{\,\nu}$ and is directly available in analytical form by Eq.\,(\ref{eq:disp_rel_k}) (see Figure \ref{fig:komega})
 %
 \footnote{In what follows, $k(\omega) \in [0,\pi]$ denotes the {\em positive} solution for $k$ of 
-Eq.\,(\ref{eq:disp_rel}) in the reduced zone scheme given by Eq.\,(\ref{eq:disp_rel_k}).\label{foot:k}}.
+Eq.\,(\ref{eq:disp_rel}) in the reduced zone scheme given by Eq.\,(\ref{eq:disp_rel_k})
+and Figure\,\ref{fig:komega}.\label{foot:k}}.
 %
 It is therefore convenient to perform a substitution of integration variables $k \to \omega$
 in Eq.\,(\ref{eq:flux_field_orig}), which gives
@@ -747,8 +746,7 @@ in Eq.\,(\ref{eq:flux_field_orig}), which gives
 where $\displaystyle{\left| \frac{d k}{d \omega} \right|}$ is the Jacobian 
 for the transformation $k \to \omega$
 and the integration is over all positive frequencies $\omega > 0$ excluding the frequency gaps 
-of the band structure 
-\color{red} (see Figure $\omega(k)$). \color{black}
+of the band structure (see Figure \ref{fig:komega}).
 We may rewrite Eq.\,(\ref{eq:flux_field_orig_omega1}) as
 %
 \begin{equation} \label{eq:flux_field_orig_omega2}
@@ -774,15 +772,11 @@ where we defined (note that $k(\omega)>0$ by convention, see footnote \ref{foot:
 \end{eqnarray}
 \end{subequations}
 %
-%
-\color{red} Note that by using $\omega$ as the independent variable, the band index $\nu$ is 
-specified by the value of $\omega = \omega_{\,\nu}$ (see Figure $\omega(k)$). \color{black} 
-%
+Note that by using $\omega$ as the independent variable, the band index $\nu$ is specified by the value of 
+$\omega = \omega_{\,\nu}$ (see Figure \ref{fig:omegak}).
 The prefactors of $\displaystyle{\left| \frac{d k}{d \omega} \right|^{1/2}}$ 
-in Eq.\,(\ref{eq:defrl})
-are introduced so that 
-the commutation relations (\ref{eq:cra_orig}) for $\hat{a}_n(k)$ result in the corresponding
-commutation relations in $\omega$-space,
+in Eq.\,(\ref{eq:defrl}) are introduced so that the commutation relations (\ref{eq:cra_orig}) 
+for $\hat{a}_n(k)$ result in the corresponding commutation relations in $\omega$-space,
 %
 \begin{subequations} \label{eq:cra_omega}
 \begin{eqnarray}
@@ -793,10 +787,10 @@ commutation relations in $\omega$-space,
 \end{subequations}
 %
 and $\hat{a}_n(\omega)$ has units of $\text{time}^{1/2}$.
-
+\newpage
 We now rewrite Eq.\,(\ref{eq:flux_field_orig_omega2}) in terms of unitless variables 
 by expressing lengths in units of $\ell$ and times in units of $\ell/v$
-as discussed in \color{red} Section X: \color{black}
+as discussed in Section \ref{sec:BC_in_frequency_domain}:
 %
 \begin{equation} \label{eq:flux_field}
 \begin{split}
@@ -811,7 +805,8 @@ as discussed in \color{red} Section X: \color{black}
 \end{split}
 \end{equation}
 %
-with the unitless field operator in section $n$ of the periodic array
+with the unitless field operator in section $n$ of the periodic array 
+(see Figure \ref{fig:system} on page \pageref{fig:system})
 %
 \begin{equation} \label{eq:ufo}
 \hat{\phi}_n(x,t) := \sqrt{\frac{2 C_0 v}{\hbar}} \, \hat{\Phi}_n(x,t) \, \, , \quad n-1 < x < n \, \, .
@@ -830,21 +825,22 @@ Note that all variables in Eq.\,(\ref{eq:flux_field}) are made unitless by expre
 and the unitless variable $\epsilon$ in Eq.\,(\ref{eq:epsilon2}), 
 which determines the strength of the potential encountered at our SQUID sites. It follows that the subsequent analysis applies to any other physical realization with corresponding physical values of $\ell$, $v$, and $\epsilon$.
 
-\color{red}
 Equation (\ref{eq:flux_field}) incorporates our strategy to find the radiation created by the 
 dynamical Casimir effect (DCE) in the SQUID array with time-dependent drive, Eq.\,(\ref{eq:energyexp1}). 
 In each section $n$ of the array, the flux field $\hat{\phi}_n(x,t)$ for $n-1 < x < n$
 is expanded in 
 right-moving (R) and left-moving (L) Bloch waves $\psi_{\omega}^{\,R}(x)$ and $\psi_{\omega}^{\,L}(x)$ 
-obtained for the static case (see Section \ref{subsec:kpsol}). The expansion 
+obtained for the static case (see Section \ref{subsec:kpsol}).
+The expansion 
 coefficients $\hat{a}_n^{\,R}(\omega)$ and $\hat{a}_n^{\,L}(\omega)$ 
 in subsequent sections $n$, $n+1$ are coupled in a nontrivial way by the time-dependent 
 part $\delta E_{J,\,n} \cos(\Omega \, t + \varphi_n)$ of the boundary condition at site $n$ in 
 Eq.\,(\ref{eq:energyexp1}). 
 The expansion coefficients in section $n+1$ are found from the coefficients in section $n$
-from the boundary condition by using a transfer matrix approach, which allows us to find the 
-coefficients and therefore the flux field for the whole array by iteration.
-\color{black}
+from the boundary condition at site $n$ by using a transfer matrix approach, which allows 
+us to find the coefficients and therefore the flux field for the whole array by iteration
+(see Figure \ref{fig:system} on page \pageref{fig:system}). 
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -881,7 +877,7 @@ with negative frequencies \cite{Johansson2010}:
 \text{for} \, \, \omega > 0 \, \, ,
 \end{equation}
 %
-which implies
+which implies for $\omega<0$
 %
 \begin{equation} \label{eq:nf2}
 \hat{a}_n^{\,R}(\omega) = \hat{a}_n^{\,R\,\dagger}(|\omega|) \, \, , \quad 
@@ -891,7 +887,8 @@ which implies
 %
 Thus, positive frequencies $\omega>0$ are associated with operators $\hat{a}(\omega)$
 and Bloch functions $\psi_{\omega}$ whereas negative frequencies $\omega<0$ are associated with
-operators $\hat{a}^{\dagger}(|\omega|)$ and Bloch functions $\psi_{|\omega|}^*$. 
+operators $\hat{a}^{\dagger}(|\omega|)$ and Bloch functions $\psi_{|\omega|}^*$
+(compare Figure \ref{fig:jump} on page \pageref{fig:jump}).
 Similar definitions apply for modes traveling to the left (L).
 Using Eq.\,(\ref{eq:nf}) we can write
 %
@@ -947,11 +944,10 @@ and left ($T$) in section $n-1 < x < n$:
 \end{subequations}
 %
 We recall that the modes in Eq.\,(\ref{eq:flux_field_omega}) are defined for both positive and 
-negative frequencies $\omega$, where negative frequencies $\omega<0$
-produce the adjoint operator $\hat{a}^{\dagger}$ 
+negative frequencies $\omega$, where negative frequencies $\omega<0$ produce the adjoint operator $\hat{a}^{\dagger}$ 
 and complex conjugate $\psi^*$ as shown in Eq.\,(\ref{eq:nf2}). 
-The frequency gaps in Eq.\,(\ref{eq:flux_field2}) can be reconciled with 
-the definition (\ref{eq:ftdef2}) of the Fourier transform by setting the integrand in 
+The frequency gaps in Eq.\,(\ref{eq:flux_field2}) can be reconciled with the definition 
+(\ref{eq:ftdef2}) of the Fourier transform by setting the integrand in 
 Eq.\,(\ref{eq:flux_field2}) to zero at values of $\omega$ that fall in frequency gaps. 
 
 
@@ -964,7 +960,8 @@ Eq.\,(\ref{eq:flux_field2}) to zero at values of $\omega$ that fall in frequency
 In the static case, where  $\delta E_{J,\,n} = 0$ in Eq.\,(\ref{eq:energyexp1})
 and the SQUID energy $E_{J,\,n} = E_J^0$ is constant, 
 there are two boundary conditions for the frequency modes $\hat{\phi}_n(x,\omega)$ 
-in Eq.\,(\ref{eq:flux_field3}) at SQUID site $n$ (see Section \ref{sec:kp}):
+in Eq.\,(\ref{eq:flux_field3}) at SQUID site $n$ (see Section \ref{sec:kp} and 
+Figure \ref{fig:system} on page \pageref{fig:system}):
 %
 \begin{enumerate}
     \item The (unitless) field operator $\hat{\phi}(x,\omega)$ is continuous at the 
@@ -989,9 +986,7 @@ in Eq.\,(\ref{eq:flux_field3}) at SQUID site $n$ (see Section \ref{sec:kp}):
     because the derivative in the first term on the r.h.s.\,of Eq.\,(\ref{eq:jump}) 
     is taken in section $n+1$ (where $n < x < n+1$)
     whereas the derivative in the second term is taken in section $n$ (where $n-1 < x < n$)
-    \color{red}
-    (Figure X).
-    \color{blue}
+    (see Figure \ref{fig:system} on page \pageref{fig:system}).
 \end{enumerate}
 %
 Since by construction the Bloch functions $\psi_{\omega}^{\,R}(x)$, $\psi_{\omega}^{\,L}(x)$ 
@@ -999,8 +994,7 @@ solve the wave equation (\ref{eq:eom3}) for the flux field with the boundary con
 (\ref{eq:cont}), (\ref{eq:jump})
 in the entire system (see Section \ref{subsec:kpsol}), in the static case 
 the solution for the 
-flux field $\hat{\phi}(x,\omega)$ in the entire system is simply a superposition of 
-noninteracting Bloch modes:
+flux field $\hat{\phi}(x,\omega)$ in the entire system is simply a superposition of non-interacting Bloch modes:
 %
 \begin{equation} \label{eq:flux_field_static}
     \hat{\phi}(x,t) \, = \, 
@@ -1011,22 +1005,17 @@ noninteracting Bloch modes:
     \hat{a}^{\,L}(\omega) \psi_{\omega}^{\,L}(x)  \, \right] e^{-i \omega \, t} \, \, ,
 \end{equation}
 %
+
+\newpage
+\noindent
 where $\hat{a}^{\,R}(\omega)$, $\hat{a}^{\,L}(\omega)$ are now {\em global} coefficients 
 (equal for all sections $n$ of the CPW) and
 given by external conditions (e.g., radiation entering the system from outside, thermal radiation, etc.). 
-\color{teal}
-For classical light, systems of this type are realized in photonic crystals, which consist of periodic dielectric 
-nanostructures that affect the motion of photons in a similar way that periodic crystal lattices affect 
-the motion of electrons in solids (Section \ref{sec:kp})
-\color{black}
- Similar descriptions of quantum fields as an expansion of Bloch modes has been employed in the study of quantum electrodynamics in photonic crystals. Some recent examples are \cite{Gainutdinov2018}, where a QED treatment is used to study the Lamb shift of atoms placed in a photonic crystal medium, and \cite{Gainutdinov2021} where ionization energy of atoms in a photonic crystal is explored.
-%
-\color{red}
-[Cite here references about photonic crystals, and recent related (quantum?) literature you showed me.
-One standard textbook about photonic crystals (MIT group) that you could cite is:
-"Photonic Crystals: Molding the Flow of Light" 2nd Edition
-by John D. Joannopoulos, Steven G. Johnson, Joshua N. Winn, Robert D. Meade]
-\color{black}
+For classical light, systems of this type are realized in photonic crystals \cite{Joannopoulos2008}, 
+which consist of periodic dielectric nanostructures that affect the motion of photons in a similar way 
+that periodic crystal lattices affect the motion of electrons in solids (see Section \ref{sec:kp})
+
+Similar descriptions of quantum fields as an expansion of Bloch modes has been employed in the study of quantum electrodynamics in photonic crystals. Some recent examples are \cite{Gainutdinov2018}, where a QED treatment is used to study the Lamb shift of atoms placed in a photonic crystal medium, and \cite{Gainutdinov2021} where ionization energy of atoms in a photonic crystal is explored.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1064,7 +1053,7 @@ with the unitless amplitude from Eq.\,(\ref{eq:deltaepsilon_alt})
 %
 and we omitted a term proportional to $C_J$ as discussed below
 Eq.\,(\ref{eq:epsilon}).
-
+\newpage
 We now show how the time-dependent boundary condition (\ref{eq:BC_field_2}) results in a 
 coupling between $\hat{a}$ operators in subsequent sections $n$, $n+1$
 of the array. 
@@ -1126,6 +1115,7 @@ Using this in Eq.\,(\ref{eq:bc4b}) we find (for fixed positive $\omega>0$)
 \end{split}
 \end{equation}
 %
+\newpage
 Note that Eq.\,(\ref{eq:bc4}) couples operators $\hat{a}_n(\omega)$, $\hat{a}_{n+1}(\omega)$ in 
 subsequent sections $n$, $n+1$ of the array in a nontrivial way due to the integral term. 
 The derivative $\psi_{\omega}^{\,'}(n^+)$ of the Bloch functions is calculated at site $n$ from the right. 
@@ -1140,8 +1130,9 @@ in Eq.\,(\ref{eq:deltag}).
 \subsubsection{Bloch functions at the SQUID sites} \label{subsubsec:bloch_functions}
 %
 We recall that the Bloch functions in Eq.\,(\ref{eq:bc4}) are given in terms of the wave vector $k(\omega)$
-by Eq.\,(\ref{eq:defrl}), where we defined $k(\omega)>0$ by convention (see footnote \ref{foot:k} on 
-page \pageref{foot:k}). To avoid confusion regarding the sign of $k$ in future calculations, let us define
+by Eq.\,(\ref{eq:defrl}), where we defined $k(\omega)>0$ by convention 
+(see Eq.\,(\ref{eq:disp_rel_k}) and footnote \ref{foot:k} on page \pageref{foot:k}). 
+To avoid confusion regarding the sign of $k$ in future calculations, let us define
 explicitly 
 %
 \begin{equation} \label{eq:kdef}
@@ -1150,11 +1141,9 @@ K := |k| > 0 \, \, \, , \quad K(\omega) := |k(\omega)| > 0 \, \, ,
 %
 so that $k = K$ if $k>0$ and $k = - K$ if $k<0$. We thus obtain for $\omega>0$
 %
-\color{red}
 \footnote{To keep the notation simple, in this section we omit the band index $\nu$. It is 
 understood that a frequency band is uniquely specified by $k$ and $\nu$, or by 
 $\omega = \omega_{\,\nu}$. See Eq.\,(\ref{eq:defrl}) in Section \ref{subsec:sq}.}
-\color{black}
 %
 \begin{subequations} \label{eq:bloch3}
 \begin{eqnarray}
@@ -1178,10 +1167,11 @@ using Eq.\,(\ref{eq:nf2}),
 \, \, , \quad \text{moving to the left (L)} \, \, .
 \end{eqnarray}
 \end{subequations}
-
-In Eq.\,(\ref{eq:bc4}) we need the values of the Bloch functions $\psi(x)$ and their derivatives 
-at the SQUID sites $n$. Since $\psi(x) = \exp(i K x) u_K(x)$ and 
+%
+In Eq.\,(\ref{eq:bc4}) we need the values of the Bloch functions $\psi(x)$ and their derivatives at the SQUID sites $n$.  
+Since $\psi(x) = \exp(i K x) u_K(x)$ and 
 $\psi'(x) = \exp(i K x) \left[i K u_K(x) + u_K'(x)\right]$ we define
+\newpage
 %
 \begin{subequations} \label{eq:cal}
 \begin{eqnarray}
@@ -1211,12 +1201,7 @@ whereas for $\omega<0$
 %
 Note that $u_K(x)$ is defined in the domain $x \in [0,1]$ so that the derivative in Eq.\,(\ref{eq:cald})
 is taken for $x>0$ and evaluated at $x=0$. The algebraic properties shown in Eq.\,(\ref{eq:cal})
-are verified in the Mathematica notebook 
-%
-\color{red}
-[cite Mathematica notebook].
-\color{black}
-%
+are verified in the Mathematica notebook (see Appendix \ref{ch:Mathematica_KP}).
 With these definitions, the Bloch functions and their derivatives at site $n$ in Eq.\,(\ref{eq:bc4}) 
 are given by, for $\omega>0$,
 %
@@ -1304,7 +1289,8 @@ e^{- i \varphi_n} \, \delta\left[\mu - (\omega - \Omega)\right]
 %
 which implies that the frequency $\omega$ is scattered to $\omega \pm \Omega$
 provided that the target frequencies $\omega \pm \Omega$ are allowed, i.e., 
-do not fall in a frequency gap of the band structure. 
+do not fall in a frequency gap of the band structure
+(see Figure \ref{fig:jump} on page \pageref{fig:jump}). 
 Thus, for given $\omega$, the range of frequencies resulting from multiple scattering 
 processes is confined to the discrete set 
 $\left\{\omega + \alpha \, \Omega \, \, \, \text{for integer} \, \, \alpha \right\}$. 
@@ -1360,9 +1346,32 @@ to negative frequencies $\omega_{\,\beta} < 0$.
 Negative frequencies turn creation and annihilation operators into their conjugate 
 versions as shown in Eq.\,(\ref{eq:nf}). It is this crossover from positive to 
 negative frequencies and the associated conjugation of 
-creation and annihilation operators that causes the DCE radiation, as will be 
-shown in Section \ref{sec:dcr} below.
+creation and annihilation operators that causes the DCE radiation, 
+as will be shown in Section \ref{sec:dcr} below. For a graphical representation 
+of the frequency jumps generated by these scattering processes, see Figure \ref{fig:jump}.
 %
+\newpage
+
+\begin{figure}
+    \includegraphics[width=1.0\textwidth, keepaspectratio]{figures/system/jump.png}
+    \caption{Band structure with frequency gaps (shown shaded) and possible transitions induced by an harmonic drive with 
+    frequency $\Omega$ (see Eq.\,(\ref{eq:omega_range})). 
+    The harmonic drive induces jumps from an allowed frequency $\omega$ in units of the drive frequency $\Omega$ (blue, 
+    here $\Omega=8$)
+    if the target frequencies $\omega \pm \Omega$ are allowed, i.e., do not fall in a band gap (green). 
+    In this figure the domain of positive frequencies $\omega>0$
+    is extended to negative frequencies $\omega<0$ by a point reflection at $\omega=0$
+    (see text below Eq.\,(\ref{eq:ccterm}) and compare Figure\,\ref{fig:omegak} on page \pageref{fig:omegak}). 
+    Physical radiation corresponds to positive frequencies $\omega > 0$. An operator $\hat{a}$ for a 
+    negative frequency $\omega - \Omega < 0$ thus transforms to the adjoint operator $\hat{a}^{\dagger}$ 
+    for positive frequency $|\omega - \Omega| > 0$ (magenta) (see Eqs.\,(\ref{eq:nf}) and \ref{eq:nf2})). 
+    This process generates DCE radiation by virtue of the commutation relation 
+    $\left[ \hat{a}, \hat{a}^{\dagger} \right] = 1$ (see Eq.\,(\ref{eq:c5})).  
+    In general, this type of process is described by a Bogoliubov transformation 
+    (see Section \ref{sec:ZPE_and_DCE}).} 
+    \label{fig:jump}
+\end{figure}
+
 If for given $\omega$ a transition from positive to negative frequencies
 occurs within the range specified by Eq.\,(\ref{eq:table}),
 we use the special index $\kappa$ for the {\em first} negative frequency 
@@ -1380,10 +1389,6 @@ Thus
 \end{array}
 \end{equation}
 
-\color{red}
-Maybe make a figure to illustrate the jumping process with cutoffs $N_u$, $N_l$ described above
-\color{black}
-
 \noindent
 Using the definitions above, denoting $\hat{a}_n^{\,R}(\alpha,n) \equiv \hat{a}_n^{\,R}(\omega_{\alpha},n)$, etc., 
 and using the abbreviation
@@ -1393,12 +1398,6 @@ d\omega(\alpha) := \left|\frac{dk}{d\omega_{\,\alpha}} \right|^{1/2} \, \, ,
 \end{equation}
 %
 the boundary condition (\ref{eq:bc5}) at SQUID site $n$ for given frequency $\omega = \omega_{\alpha}$ reads
-
-\noindent
-\color{red}
-[Comment: This equation corresponds to the equation on "Periodic Array (PA)", page 16,
-with the changes due to the substitution $k \to \omega$ and made unitless]
-\color{black}
 %
 \begin{equation} \label{eq:bc6}
 \begin{split}
@@ -1424,14 +1423,7 @@ we divide Eq.\,(\ref{eq:bc6}) by $\epsilon$
 from Eq.\,(\ref{eq:epsilon2}) and define matrices $\delta G^{\,(n)}$ and $A$ by
 %
 \footnote{Note that Greek indices $\alpha$, $\beta$, etc.~label the set of frequencies 
-$\omega_{\,\alpha}$ in (\ref{eq:table}) whereas Latin indices $n$ label the SQUID sites.}
-
-\noindent
-\color{red}
-[Comment: The definitions for the $\delta G = \delta \widetilde{g}$ and $A$ matrices below are exactly 
-like in "Periodic Array (PA)", page 17, using Greek instead of Latin indices for the matrix elements,
-and using notation $\delta G$ instead of $\delta \widetilde{g}$.]
-\color{black}
+$\omega_{\,\alpha}$ in Eq.\,(\ref{eq:table}) whereas Latin indices $n$ label the SQUID sites.}
 %
 \begin{equation} \label{eq:matrix_gtilde}
 \delta G_{\alpha \beta}^{\,(n)} \, := \, \frac{1}{2} \frac{\delta \epsilon_n^0}{\epsilon} \, 
@@ -1480,11 +1472,7 @@ Furthermore, we combine annihilation operators for the frequencies in Eq.\,(\ref
 where the index $\kappa$ is defined in Eq.\,(\ref{eq:table_kappa}) and for the second equation we used
 Eq.\,(\ref{eq:nf2}). 
 Note that the vector $\vec{X}_R$ is defined for section $n$ of the SQUID array at position $x=n$, i.e.,
-right at and to the left of SQUID $n$
-%
-\color{red}
-(see Figure X).
-\color{black}
+right at and to the left of SQUID $n$ (see Figure \ref{fig:xy}).
 %
 To simplify notation in the following discussion, we omit the index $n$ for $\vec{X}_R$ and it is 
 understood that $\vec{X}_R$ is an operator. 
@@ -1492,11 +1480,8 @@ In a completely analogous way as in Eq.\,(\ref{eq:vector_x}) we define a vector 
 left-moving modes (L). 
 
 In a similar way we define vectors $\vec{Y}_R$, $\vec{Y}_L$
-for section $n+1$ of the SQUID array at position $x=n$, i.e., right at and to the right of SQUID $n$
-%
-\color{red}
-(see Figure X):
-\color{black}
+for section $n+1$ of the SQUID array at position $x=n$, i.e., right at and to the right of SQUID $n$ 
+(see Figure \ref{fig:xy}):
 %
 \begin{equation} \label{eq:vector_y}
 \vec{Y}_R \, = \, 
@@ -1519,9 +1504,7 @@ for section $n+1$ of the SQUID array at position $x=n$, i.e., right at and to th
 \end{pmatrix}
 \end{equation}
 %
-and similarly for $\vec{Y}_L$. 
-
-With these definitions, Eq.\,(\ref{eq:bc6}) becomes a matrix equation
+and similarly for $\vec{Y}_L$. With these definitions, Eq.\,(\ref{eq:bc6}) becomes a matrix equation
 (omitting the index $n$ for the matrix $\delta G$)
 %
 \begin{equation} \label{eq:bc7}
@@ -1574,12 +1557,6 @@ I + {\cal G} & {\cal G} \\
 %
 where $I$ is the identity matrix and the $M \times M$ matrix ${\cal G}$ is defined as
 %
-\color{red}
-[Comment: The matrix ${\cal G}$ was called $M$ in previous notes "Periodic Array (PA)", page 19. 
-I call it ${\cal G}$ to not confuse it with the number of elements of the vectors which is 
-also called $M$]
-\color{black}
-%
 \begin{equation} \label{eq:matrix_G}
 {\cal G} = \left( A - A^* \right)^{-1} \delta G \, \, .
 \end{equation}
@@ -1592,7 +1569,7 @@ ${\cal A}_{\alpha} - {\cal A}_{\alpha}^* = \pm 2 i \left[ K(\omega_{\,\alpha}) {
 + \text{Im}( {\cal D}_{\alpha}) \right]$ for $\omega_{\,\alpha} > 0$ ($+$) or $<0$ ($-$) 
 (see Eq.\,(\ref{eq:matrix_a})). 
 %
-The solution for the $\vec{Y}$ vectors takes the compact form
+The solution for the $\vec{Y}$ vectors takes the compact form (see Figure \ref{fig:xy})
 %
 \begin{equation} \label{eq:matrix_compact}
     \underline{Y} = S \, \underline{X} \, \, ,
@@ -1609,10 +1586,11 @@ are equal for all $n$, and we recover the result in Eq.\,(\ref{eq:flux_field_sta
 found in the static case. 
 
 \begin{figure}
-    \includegraphics[width=0.5\textwidth, keepaspectratio]{figures/system/xy.png}
+    \centering
+    \includegraphics[width=0.4\textwidth, keepaspectratio]{figures/system/xy.png}
     \caption{Matrix $S$ transforming vectors $\vec{X}_R$, $\vec{X}_L$ on the left of SQUID site $n$
     to vectors $\vec{Y}_R$, $\vec{Y}_L$ on the right of SQUID site $n$ according to 
-    Eq.\,(\ref{eq:matrix_compact}). The propagation directions of the associated operators  
+    Eq.\,(\ref{eq:matrix_compact}). The directions of propagation of the associated operators  
     are indicated by the blue arrows.}
     \label{fig:xy}
 \end{figure}
@@ -1690,16 +1668,11 @@ with the transfer matrix
 T_n = P(1) \, S_n \, \, .
 \end{equation}
 %
-In Eq.\,(\ref{eq:matrix_t}) we reintroduce indices to indicate that 
-$\underline{Y}_{\, n+1}(x=n+1)$ contains operators in section $n+1$ evaluated at $x=n+1$
+In Eq.\,(\ref{eq:matrix_t}) we reintroduce indices to indicate that $\underline{Y}_{\, n+1}(x=n+1)$ contains operators in section $n+1$ evaluated at $x=n+1$
 and $\underline{X}_{\,n}(x=n)$
 contains operators in section $n$ evaluated at $x=n$. 
 The transfer matrix $T_n$ in Eq.\,(\ref{eq:matrix_t2}) thus transfers the latter 
-to the right by one repeated unit of the periodic SQUID array
-%
-\color{red}
-(see Figure X). Make Figure like that on page 21 of "Periodic Array"
-\color{black}
+to the right by one repeated unit of the periodic SQUID array (see Figure \ref{fig:system}).
 %
 Furthermore, we use the index $n$ for $T_n$ to indicate that the transfer matrix
 depends on the SQUID site $n$ by the contribution $S = S_n$ in Eq.\,(\ref{eq:matrix_s}) 
@@ -1712,7 +1685,7 @@ dispersion relation $K(\omega)$.
     %\centering
     \includegraphics[width=1.0\textwidth, keepaspectratio]{figures/system/system.png}
     \caption{SQUID sites $n$ (blue) and CPW sections $n$ with flux field $\hat{\phi}_{\,n}(x,t)$ for 
-    $n-1 < x < n$ (black). The matrix $S_n$ in Eq.\,(\ref{eq:matrix_s}) (red) transfers the flux field through the 
+    $n-1 < x < n$ (black). The matrix $S_n$ in Eq.\,(\ref{eq:matrix_s}) (red) transfers the flux field across the 
     boundary at site $n$. The matrix $P = P(1)$ in Eq.\,(\ref{eq:matrix_p2}) (green) propagates the flux field 
     through section $n+1$ from the right side of site $n$ to the left side of site $n+1$. Repeated application 
     of the transfer matrix $T_n = P(1) \, S_n$ in Eq.\,(\ref{eq:matrix_t2}) thus propagates the 
@@ -1727,29 +1700,14 @@ dispersion relation $K(\omega)$.
 \section{Dynamical Casimir radiation in the periodic SQUID array}
 \label{sec:dcr}
 
-\color{red}
-
-\noindent
-The following text follows the write-up "Radiation" from 08/28/20
-
-\noindent
-Include figures like shown on first page of "Radiation" from 08/28/20 with new notation 
-as shown in text below. These figures will be called "Figure A" and "Figure B" below.
-
-\color{black}
-
 \noindent
 We consider a linear, periodic array of ${\cal N} + 1$ SQUIDs $n = 0, \ldots , {\cal N}$
-along the $x$-axis separated by a distance (lattice constant) $\ell$. 
-In this section we use again unitless variables 
-where the lattice constant is 1 and $x_n = n$. The first SQUID (on the far left) is located 
-at $x=0$ and the last one (on the far right) at $x = {\cal N}$. The SQUID array is 
-connected to CPW lines as shown in 
-%
-\color{red}
-(Figure A).
-\color{black}
-%
+along the $x$-axis separated by a distance (lattice constant) $\ell$ and connected to 
+coplanar waveguide (CPW) lines. In this section we use again unitless variables 
+where the lattice constant is 1 and $x_n = n$.
+The first SQUID (on the far left) is located at $x=0$ and the last one 
+(on the far right) at $x = {\cal N}$ (see Figure \ref{fig:system}).
+
 If the transfer matrix in Eq.\,(\ref{eq:matrix_t2}) is independent of the SQUID site $n$, 
 i.e., $T_n = T$, by repeated application of Eq.\,(\ref{eq:matrix_t}) we can express the 
 operators on the far right in terms of the operators on the far left:
@@ -1766,14 +1724,14 @@ U = S \, T^{\cal N} = S \, (P \, S)^{\cal N}
 %
 and $\underline{X}_{\,\text{left}}$ and $\underline{X}_{\,\text{right}}$ are defined 
 as in Eq.\,(\ref{eq:x_comp}) with vectors $\vec{X}_R$ and $\vec{X}_L$ as in 
-Eq.\,(\ref{eq:vector_x}). In Section \ref{sec:results} we will also consider an
-$n$-dependent harmonic drive 
+Eq.\,(\ref{eq:vector_x}). 
+In Section \ref{sec:results_symmetry_breaking} we will also consider an $n$-dependent harmonic drive 
 $\delta \epsilon_n(t) = \delta \epsilon^0 \cos(\Omega \, t + \varphi_n)$
 with $\delta \epsilon^0$ equal for all SQUIDs and
 $\varphi_n = n (2 \pi) / 3$ (see Eq.\,(\ref{eq:deltaepsilon})).
 This case is also described by Eqs.\,(\ref{eq:leftright}), (\ref{eq:matrix_u}) 
 using a modified $U$-matrix for a periodically repeated unit 
-cell containing 3 SQUIDs for an array containing a total number of $3 {\cal N} + 1$ SQUIDs:
+cell containing 3 SQUIDs in an array containing a total number of $3 {\cal N} + 1$ SQUIDs:
 %
 \begin{equation} \label{eq:matrix_u2}
 U' = S(\varphi=0) \, \left[T\left(\varphi =  \frac{4\pi}{3}  \right) T\left(\varphi =  \frac{2\pi}{3} \right) T(\varphi = 0) \right]^{\cal N} \, \, .
@@ -1809,16 +1767,12 @@ c & d \\
 \end{equation}
 %
 This equation relates a signal on the right of the SQUID array (incoming and outgoing)
-to a signal on the left. However, we would like to study a different situation: For given
+to a signal on the left (compare Figure \ref{fig:xy}).
+However, we would like to study a different situation: For given
 {\em incoming} signals $\vec{X}_{R\,,\,\text{left}}$ and $\vec{X}_{L\,,\,\text{right}}$ 
 (e.g., thermal noise) we would like to obtain the {\em outgoing} signals 
 $\vec{X}_{R\,,\,\text{right}}$ and $\vec{X}_{L\,,\,\text{left}}$ generated or influenced 
-by the dynamical DCE effect in the SQUID array 
-%
-\color{red}
-(Figure B).
-\color{black}
-%
+by the dynamical DCE effect in the SQUID array.
 This result can be obtained from Eq.\,(\ref{eq:leftright2}) by simple algebra, 
 and we find
 %
@@ -1861,7 +1815,7 @@ using the definition (\ref{eq:vector_x}),
 \end{equation}
 %
 where $\displaystyle{\left. \vec{X}_{R\,,\,\text{left}} \right|_{\beta}}$ is the 
-component $\beta$ of the vector $\displaystyle{\vec{X}_{R\,,\,\text{left\,}}}$. 
+component $\beta$ of the vector $\displaystyle{\vec{X}_{R\,,\,\text{left\,}}}$. Equation \ref{eq:abcdexplicit}, gives the Bogoliubov transformations for our particular system (see Section \ref{sec:ZPE_and_DCE}).
 Multiplying this equation from the left by $\hat{a}_{\,\text{right}}^{\,R\,\dagger}(\omega_{\,\alpha})$
 we obtain the number operator for outgoing photons with frequency $\omega_{\,\alpha}$ 
 moving to the right (R) on the right side (right) of the SQUID array:
@@ -1884,6 +1838,7 @@ moving to the right (R) on the right side (right) of the SQUID array:
 \end{split}
 \end{equation}
 %
+\newpage
 To find the DCE radiation associated with the photon number operator 
 $\hat{n}_{\,\text{right}}^{\,R}(\omega_{\,\alpha})$ 
 we define the density operator for a thermal equilibrium ensemble at temperature $T$
@@ -1929,12 +1884,13 @@ $\omega_{\,\alpha}$ moving to the right (R) on the right side (right) of the SQU
 % 
 The traces on the r.h.s.~of the above equation 
 only contribute for $\gamma = \beta$ since the Hamilton operator $\hat{H}$ in Eq.\,(\ref{eq:hamilton}) 
-is diagonal in $\omega$. Moreover, the terms containing products 
-$\hat{a}_{\,\text{left}}^{\dagger} \, \hat{a}_{\,\text{right}}$ and 
+is diagonal in $\omega$. 
+Moreover, the terms containing products $\hat{a}_{\,\text{left}}^{\dagger} \, \hat{a}_{\,\text{right}}$ and 
 $\hat{a}_{\,\text{right}}^{\dagger} \, \hat{a}_{\,\text{left}}$ in Eq.\,(\ref{eq:numberop})
 vanish when taking the trace since the thermal noise on the left and right side of the array
 is uncorrelated. We thus find, using the form of the vector 
 $\vec{X}$ in Eq.\,(\ref{eq:vector_x}),
+
 %
 \begin{equation} \label{eq:numberthermal2} 
 \begin{split}
@@ -1986,7 +1942,7 @@ The traces in the second and fourth terms on the r.h.s.~in Eq.\,(\ref{eq:numbert
 can also be expressed in terms of $\left. n(\omega_{\,\beta}, T) \right|_{\text{eq}}$
 after using the commutation relation for a given frequency $\omega > 0$:
 %
-\begin{equation} \label{c5}
+\begin{equation} \label{eq:c5}
 \left[ \hat{a}(\omega), \hat{a}^{\dagger}(\omega) \right] \, = \, 1 \, \, \, \Rightarrow \, \, \, 
 \hat{a}(\omega) \, \hat{a}^{\dagger}(\omega) \, = \, \hat{a}^{\dagger}(\omega) \, \hat{a}(\omega) \, + \, 1 \, \, .
 \end{equation}
@@ -2009,7 +1965,7 @@ For example, for the second term on the r.h.s.\,in Eq.\,(\ref{eq:numberthermal2}
 It is this operation, the application of the commutation relation for negative frequencies
 $\omega_{\,\beta} < 0$ for $\beta \ge \kappa$ as in Eq.\,(\ref{eq:c6}), that results in the DCE 
 radiation by the extra 1 on the r.h.s.\,of Eq.\,(\ref{eq:c6}) (see Eq.\,(\ref{eq:table_kappa})
-and related discussion).
+and related discussion, and Figure \ref{fig:jump} on page \pageref{fig:jump}).
 Using Eq.\,(\ref{eq:c6}) in Eq.\,(\ref{eq:numberthermal2}) we obtain the final result for the
 expectation value of the photon number of the outgoing mode with frequency 
 $\omega_{\,\alpha}$ moving to the right (R) on the right side (right) of the SQUID array:
@@ -2050,14 +2006,6 @@ n_{\,\text{left}}^{\,L}(\omega_{\,\alpha}, T) \, & = \,
 %
 with the matrices $C$, $D$ given by Eq.\,(\ref{eq:bigabcd}). 
 
-\begin{figure}
-    \includegraphics[width=1.0\textwidth, keepaspectratio]{figures/system/jump.png}
-    \caption{Jumps in the band structure creating DCE radiation.}
-    \label{fig:jump}
-\end{figure}
-
-
-
 
 
 
@@ -2078,15 +2026,8 @@ We use again unitless variables
 by expressing lengths in units of $\ell$
 and times in units of $\ell/v$ where $\ell$ is the distance between SQUIDs in the periodic array
 and $v$ is the speed of light in the CPW (see text after Eq.\,(\ref{eq:BC_freq_static})). 
-The calculation is illustrated in the
+The calculation is illustrated in the Mathematica notebook in Appendix \ref{ch:Mathematica_KP}. Results in Chapter \ref{ch:results} were generated using the full-length calculation with a Python program available in the author's public GitHub Repository \cite{Github_Repository}.
 %
-\color{red} 
-Mathematica notebook in Appendix \ref{ch:Mathematica_DCE} and 
-the results in Section \ref{sec:results} were obtained by Python code 
-available on GitHub.
-\color{blue}
-
-\noindent
 Using unitless variables, the only system-specific input parameters are:
 %
 \begin{itemize}
@@ -2094,19 +2035,19 @@ Using unitless variables, the only system-specific input parameters are:
 \item A given (unitless) frequency 
 $\omega = \omega_{\,\alpha} > 0$ for which we want to calculate 
 $n_{\,\text{right}}^{\,R}(\omega_{\,\alpha}, T)$ and 
-$n_{\,\text{left}}^{\,R}(\omega_{\,\alpha}, T)$
+$n_{\,\text{left}}^{\,R}(\omega_{\,\alpha}, T)$;
 %
-\item The energy parameter $\epsilon$ in Eqs.\,(\ref{eq:epsilon2}) and (\ref{eq:energyexp_alt})
+\item The energy parameter $\epsilon$ in Eqs.\,(\ref{eq:epsilon2}) and (\ref{eq:energyexp_alt});
 %
 \item The drive frequency $\Omega$, amplitudes $\delta \epsilon_n^0$ and 
 phases $\varphi_n$ in the harmonic drive term 
 $\delta \epsilon_n(t) = \delta \epsilon_n^0 \, \cos(\Omega \, t + \varphi_n)$
-in Eq.\,(\ref{eq:energyexp_alt})
+in Eq.\,(\ref{eq:energyexp_alt});
 
-\item The number of repeated units ${\cal N}$ of the SQUID array
+\item The number of repeated units ${\cal N}$ of the SQUID array;
 
 \item The temperature $T$ in the thermal occupation numbers 
-$\left. n(\omega_{\,\beta}, T) \right|_{\text{eq}}$ in Eq.\,(\ref{eq:ton})
+$\left. n(\omega_{\,\beta}, T) \right|_{\text{eq}}$ in Eq.\,(\ref{eq:ton}).
 %
 \end{itemize}
 
@@ -2122,7 +2063,7 @@ Using unitless variables,
 the band structure for the static case only depends on the parameter $\epsilon$
 (see Section \ref{subsec:kpsol}).
 Program the inverse dispersion relation $k(\omega, \epsilon) \in [0, \pi]$ 
-in Eq.\,(\ref{eq:disp_rel}). 
+in Eq.\,(\ref{eq:disp_rel_k}). 
 If $\omega$ is allowed, the function should return the value $k(\omega)$. If $\omega$ is not allowed 
 (i.e., falls in a frequency gap) the function should return a flag.
 Extend this function to negative frequencies by defining $k(\omega) := k(|\omega|)$ for $\omega < 0$.
@@ -2131,13 +2072,12 @@ The function $k(\omega, \epsilon) > 0$ corresponds to $K(\omega)$ defined in Eq.
 \item \label{item:u}
 Program a function $u(x, \omega, \epsilon)$ corresponding to 
 $u_{\,\omega}(x) = u_{\nu, \, k(\omega)}(x)$ in Eq.\,(\ref{eq:psi1}).
-A closed-form expression of $u(x, \omega, \epsilon)$ is given in the 
-\color{red} Mathematica notebook in Appendix ??
-\color{blue}
-where the function is called 
-\color{red} "u" \color{blue}. In the notebook, $\omega$ is denoted $q$
-(see footnote \ref{footnote:q} on page \pageref{footnote:q}) and the function \color{red} "u" \color{blue} 
-depends explicitly on $q = \omega$ and the function 
+A closed-form expression of $u(x, \omega, \epsilon)$ is given in the Mathematica notebook in Appendix \ref{ch:Mathematica_KP}
+%
+where the function is called "u1" for $k>0$ (right-moving mode) and "u2" for $k<0$ (left-moving mode). 
+In the notebook, $\omega$ is denoted $q$
+(see footnote \ref{footnote:q} on page \pageref{footnote:q}) and the function 
+$u_{\,\omega}(x)$ depends explicitly on $q = \omega$ and the function 
 $k(\omega,\epsilon)$ of step \ref{item:kp}.
         
 \item  \label{item:domain}
@@ -2180,7 +2120,7 @@ found in step \ref{item:kappa}. (Note that $K(\omega)$ in Eq.\,(\ref{eq:matrix_p
 \item If the matrix $S$ (and thus $T$) is independent of the SQUID site $n$, calculate the matrix 
 $U$ using Eq.\,(\ref{eq:matrix_u}) with the matrices $S$ and $P$ found above 
 and the number ${\cal N}$ of repeated units of the array. Otherwise, modify the calculation of $U$
-according to the given setup (see Section \ref{sec:results}). 
+according to the given setup (See Chapter \ref{ch:results}).
 
 \item \label{item:abcd}
 Identify the submatrices $a$, $b$, $c$, $d$ of $U$ according to Eq.\,(\ref{eq:abcd}), and use
@@ -2318,5 +2258,3 @@ Section \ref{sec:summary}.
  \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\color{black}
