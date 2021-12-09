@@ -531,10 +531,11 @@
 \renewcommand{\appendix}{%
   \renewcommand\thefigure{\Alph{chapter}.\arabic{figure}}
   \inappendixtrue
+  \setcounter{secnumdepth}{0}
   \setcounter{chapter}{0}%
   \setcounter{section}{0}%
   \gdef\@chapapp{APPENDIX}%
-  \gdef\thechapter{\@Alph\c@chapter}
+  \gdef\thechapter{}%\@Alph\c@chapter}
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -571,7 +572,7 @@
   \mbox{}  % empty box
   {\centering%
   \vfill
-  APPENDIX~\Alph{appendixtracker}
+  APPENDIX%~\Alph{appendixtracker}
   \vspace{1.25\baselineskip}
   \vfill
   \par
@@ -588,7 +589,7 @@
                          \typeout{\@chapapp\space\thechapter.}%
                          \ifinappendix  %% omits appendix title from TOC
                            \addcontentsline{toc}{chapter}%
-                             {APPENDIX~\Alph{chapter}}%
+                             {APPENDIX}%~\Alph{chapter}}%
                          \else
                            \addcontentsline{toc}{chapter}%
                              {CHAPTER~\Roman{chapter}.~#1}%

@@ -7,7 +7,6 @@ One of the most exciting predictions of quantum field theory is the existence of
 Of particular interest to us is a phenomenon where the effects of the zero-point energy can be observed in the presence of the time-dependent modulation of a boundary. First proposed half a century ago by Moore \cite{Moore1970}, the dynamical Casimir effect (DCE) refers to the spontaneous creation of photons by the excitation of the zero-point quantum states due to a moving mirror (see Fig.\,\ref{fig:Nation_movingmiror}). Moore showed that the effect was "immeasurably small" for non-relativistic mirror trajectories. Therefore, the detection of DCE would only be possible in scenarios with boundaries exhibiting relativistic motion.
 %
 \begin{figure}
-    \centering
     \includegraphics[width = 3.7in, keepaspectratio]{figures/intro/Nation2011_DCE.png}
     \caption{Illustration of the dynamical Casimir effect (DCE) due to an oscillating mirror. 
     Photon pairs are created out of vacuum fluctuations by means of the non-adiabatic oscillation of a mirror. Credit: \protect\cite{Nation2011}.}
@@ -28,7 +27,7 @@ a mirror which oscillates at speeds close to the speed of light.
 Since the original proposal by Moore, the study of the DCE has evolved into a mature field with many publications analyzing theoretical implications as well as experimental realizations (see \cite{Dodonov_Review2020}). Different treatments of the DCE can be found in the literature, where states of the quantum electromagnetic field are characterized by its energy momentum tensor $T_{\alpha, \beta}(x,t)$ \cite{Fulling&Davies1976}, or by means of a second-quantization expansion of the fields in the Fock state basis \cite{Dodonov1990}. In this work, we employ the latter approach as it allows us to examine the field in terms of its photon statistics similar to the ones employed in \cite{Dodonov1990,Lambrecht1996, Nation2011}.
 
 \begin{figure}
-    \centering
+    %
     \includegraphics[width=1.3in, keepaspectratio]{figures/intro/Nation2011_transformation.png}
     \caption{Oscillation of a mirror as a function of time. Using a Bogoliubov transformation we express the field modes 
     at times $t>T$ as a superposition of field modes for $t<0$. Credit: \protect\cite{Nation2011}.}
@@ -106,15 +105,15 @@ The quantum electromagnetic field is largely studied via the interactions betwee
 Advances in the theory and technology of superconducting circuits have developed rapidly due to their use in quantum computing and other quantum technologies \cite{Krantz2019}.
 Treatments for the quantum description of SQC, including the quantization method, and the input-output formalism we employ can be found in standard references for quantum network theory \cite{Yurke1984, Vool2017}.
 
-\begin{figure}[h]
-    \centering
+\begin{figure}[ht]
+    %
     \includegraphics[width=2in, keepaspectratio]{figures/intro/Kittel_Josephson.png}
     \caption{Schematic representation of a Josephson junction. Superconducting segments A and B are interrupted by a thin insulating barrier C. Credit: \protect\cite{Kittel1996_Solid_State}.}
     \label{fig:Kittel_JJ}
 \end{figure}
 
 \begin{figure}
-    \centering
+    %
     \includegraphics[width=2in, keepaspectratio]{figures/intro/Kittel_SQUID.png}
     \caption{Schematic representation of a superconducting quantum interference device (SQUID). A superconducting loop is interrupted by two Josephson junctions with total current $J_{\text{total}}$. An external magnetic field $B$ is applied to the loop. Credit: \protect\cite{Kittel1996_Solid_State}.}
     \label{fig:Kittel_SQUID}
@@ -125,8 +124,8 @@ Treatments for the quantum description of SQC, including the quantization method
 we employ in our quantum network theory treatment can be found in \cite{Yurke1984, Vool2017}. 
 The CPW can be modeled as a series of coupled inductor-capacitor (LC) circuits. 
 
-\begin{figure}[h]
-    \centering
+\begin{figure}[ht]
+    %
     \includegraphics[width=0.5\textwidth,keepaspectratio]{figures/intro/LC_Vool2017.png}
     \caption{A superconducting coplanar waveguide (CPW) modeled as a series of inductors and capacitors. Credit: \protect\cite{Vool2017}.}
     \label{fig:CPW_diagram}
@@ -148,7 +147,9 @@ As for the SQUID, it also contains capacitive and inductive terms. The total ind
     \frac{\Phi_{J_2}}{\Phi_0}\right)} \, \, ,
 \end{equation}
 %
-where $E_{J_\alpha}$ and $\Phi_{J_\alpha}$ are the Josephson energy and the flux through the $\alpha$th SQUID respectively, $\Phi_0$ is the quantum of magnetic flux, and the fluxes of Josephson junctions are related to the external flux by $\Phi_1 - \Phi_2  = \Phi_{\text{ext}}(t)$. If we consider a symmetric SQUID, such that $E_{J_1} = E_{J_2} = \epsilon_J$, and
+where $E_{J_\alpha}$ and $\Phi_{J_\alpha}$ are the Josephson energy and the flux through the $\alpha$th Josephson junction, 
+respectively, $\Phi_0$ is the magnetic flux quantum, and the fluxes of Josephson junctions are related to the external flux
+by $\Phi_1 - \Phi_2  = \Phi_{\text{ext}}(t)$. If we consider a symmetric SQUID, such that $E_{J_1} = E_{J_2} = \epsilon_J$ and
 $C_{J_1} = C_{J_2} = C_J/2$, we can write the Lagrangian density for the SQUID as
 %
 \begin{equation}\label{eq:squid_energy_symm}
@@ -177,7 +178,7 @@ Figure \ref{fig:Johansson2010_reproduced} shows results reproduced by our calcul
 The photon number density is shown as a function of frequency.
 %
 \begin{figure}
-    \centering
+    %
     \includegraphics[width=3in, keepaspectratio]{figures/intro/Johansson2010_effectivemirror.png}
     \caption{(a) Representation of a coplanar waveguide (CPW) terminated by a superconducting quantum interference device (SQUID). 
     The external harmonic magnetic flux $\Phi_{\text{ext}}(t)$ generates 
@@ -187,10 +188,10 @@ The photon number density is shown as a function of frequency.
 
 
 \begin{figure}
-    \centering
-    \includegraphics[width=6.5in,keepaspectratio]{figures/intro/Johansson2010_reproduced.png}
-    \caption{Results reproduced by our calculations using the analysis from \protect\cite{Johansson2010}. 
-    Shown is the photon number as a function of frequency in units of the SQUID driving frequency $\frac{\omega_d}{2\pi}$ = 18.6GHz. The output thermal radiation is shown for temperatures of 25mK and 50mK and compared with the DCE radiation emitted.}
+    %
+    \includegraphics[width=6.5in,keepaspectratio]{figures/intro/reproduced_Johansson.png}
+    \caption{Reproduced results using the analysis from \protect\cite{Johansson2010}. 
+    Shown is the photon number as a function of frequency in units of the SQUID driving frequency $\omega_d / 2\pi$ = 18.6GHz. The output thermal radiation is shown for temperatures of 25mK and 50mK and compared with the DCE radiation emitted.}
     \label{fig:Johansson2010_reproduced}
 \end{figure}
 

@@ -25,7 +25,7 @@ $\displaystyle \dot{\Phi}_i = \frac{\partial}{\partial t} \Phi_i$.
 The terms on the r.h.s.\,of the first line of Eq.\,(\ref{eq:lagn1}) describe sections of the CPW between the SQUIDs. %
 %
 \begin{figure}
-    \centering
+    %
     \includegraphics[width=\textwidth, keepaspectratio]{figures/system/circuit_diagram.png}
     \caption{Circuit diagram for a periodic lattice consisting of CPWs connected by symmetric SQUIDs at lattice sites $n$. 
     The dynamical fluxes $\Phi_i$ and $\Phi_{J,\,n}$ characterize the system.}
@@ -369,7 +369,7 @@ where $\psi(x)$ is the wave function, $m$ the mass, and $E$ the energy
 of the electron.
 %
 \begin{figure}
-    \centering
+    %
     \includegraphics[width=\textwidth, keepaspectratio]{figures/system/dirac_comb.png}
     \caption{Diagrammatic representation of Dirac comb potential as an infinite series of Dirac delta distributions placed at intervals $\ell$.}
     \label{fig:dirac_comb}
@@ -474,7 +474,7 @@ B_n \, \exp\left[-i q (x-n) \right] \, \, , \quad n-1 < x < n \, \, ,
 and to determine the $n$-dependent coefficients $A_n$, $B_n$ by the boundary conditions 
 (\ref{eq:BC_freq_static_unitless_2}) using a transfer matrix approach.
 The extra terms $\exp(- i q n)$, $\exp(i q n)$ in Eq.\,(\ref{eq:kpansatz}) were introduced 
-for computational convenience  (see Mathematica notebook in Appendix \ref{ch:Mathematica_KP}).
+for computational convenience (see Mathematica notebook in the Appendix).
 %
 We find solutions for the Kronig-Penney-type model defined by 
 Eqs.\,(\ref{eq:eom3}), (\ref{eq:BC_freq_static_unitless_2})
@@ -540,14 +540,15 @@ it is sufficient to consider positive wave vectors $k>0$.
 A solution 
 of Eq.\,(\ref{eq:disp_rel_k}) for $\omega_{\, \nu}(k)$ obtained 
 by graphically inverting the function $k(\omega)$ using the 
-Mathematica function ParametricPlot (see Appendix \ref{ch:Mathematica_KP}) is shown in Figure \ref{fig:omegak}
+Mathematica function ParametricPlot (see Appendix) 
+is shown in Figure \ref{fig:omegak}
 %
 \footnote{The dispersion relation $\omega_{\, \nu}(k)$ resulting from Eq.\,(\ref{eq:disp_rel_k}) cannot be 
 calculated in closed form. Our calculations will therefore use the inverse function $k(\omega)$,
 which is directly given in analytical form by Eq.\,(\ref{eq:disp_rel_k}). See Section \ref{subsec:sq}.}.
 
 \begin{figure}
-    \centering
+    %
     \includegraphics[width=0.8\textwidth, keepaspectratio]{figures/system/u.png}
     \caption{(a) Real part and (b) imaginary part of the function $u_{\nu,\,k}(x)$ 
     for $0 \le x \le 1$ for the Bloch function 
@@ -557,7 +558,7 @@ which is directly given in analytical form by Eq.\,(\ref{eq:disp_rel_k}). See Se
 \end{figure}
 
 \begin{figure}
-    \centering
+    %
     \includegraphics[width=0.8\textwidth, keepaspectratio]{figures/system/psi.png}
     \caption{(a) Real part and (b) imaginary part of the Bloch function 
     $\psi_{\nu,\,k}(x) = e^{i k x} u_{\nu,\,k}(x)$ in Eq.\,(\ref{eq:psi1}). 
@@ -566,7 +567,7 @@ which is directly given in analytical form by Eq.\,(\ref{eq:disp_rel_k}). See Se
 \end{figure}
 %
 \begin{figure}
-    \centering
+    %
     \includegraphics[width=0.7\textwidth, keepaspectratio]{figures/system/cosk.png}
     \caption{Frequency bands and gaps for the Kronig-Penney-type model defined by 
     Eqs.\,(\ref{eq:eom3}) and (\ref{eq:BC_freq_static_unitless_2}).
@@ -583,7 +584,7 @@ which is directly given in analytical form by Eq.\,(\ref{eq:disp_rel_k}). See Se
 \end{figure}
 %
 \begin{figure}
-    \centering
+    %
     \includegraphics[width=0.7\textwidth, keepaspectratio]{figures/system/komega.png}
     \caption{Inverse dispersion relation $k(\omega) \in [0,\pi]$ 
     for allowed frequencies $\omega$ given by Eq.\,(\ref{eq:disp_rel_k}) for $\epsilon=5$. 
@@ -592,7 +593,7 @@ which is directly given in analytical form by Eq.\,(\ref{eq:disp_rel_k}). See Se
 \end{figure}
 
 \begin{figure}
-    \centering
+    %
     \includegraphics[width=0.4\textwidth, keepaspectratio]{figures/system/omegak.png}
     \caption{Dispersion relation $\omega(k)$ with frequency bands $\nu$ resulting from 
     $\cos k = \cos{\omega} + \frac{\epsilon}{2 \omega} \sin{\omega}$ for $\epsilon=5$
@@ -1201,9 +1202,8 @@ whereas for $\omega<0$
 %
 Note that $u_K(x)$ is defined in the domain $x \in [0,1]$ so that the derivative in Eq.\,(\ref{eq:cald})
 is taken for $x>0$ and evaluated at $x=0$. The algebraic properties shown in Eq.\,(\ref{eq:cal})
-are verified in the Mathematica notebook (see Appendix \ref{ch:Mathematica_KP}).
-With these definitions, the Bloch functions and their derivatives at site $n$ in Eq.\,(\ref{eq:bc4}) 
-are given by, for $\omega>0$,
+are verified in the Mathematica notebook in the Appendix. %\ref{ch:Mathematica_KP}.
+With these definitions, the Bloch functions and their derivatives at site $n$ in Eq.\,(\ref{eq:bc4}) are given by, for $\omega>0$,
 %
 \begin{equation} \label{eq:bloch_n}
 \begin{split}
@@ -1275,8 +1275,7 @@ Using the above definitions, Eq.\,(\ref{eq:bc4}) takes the form
 
 \subsubsection{Implementation of the harmonic drive} \label{subsubsec:harmonic_drive}
 
-We now specify the kernel $\delta g_n(\omega, \mu)$ in Eq.\,(\ref{eq:bc5}) 
-for the harmonic drive $\delta \epsilon_n(t) = \delta \epsilon_n^0 \, \cos(\Omega \, t + \varphi_n)$
+We now specify the kernel $\delta g_n(\omega, \mu)$ in Eq.\,(\ref{eq:bc5}) for the harmonic drive $\delta \epsilon_n(t) = \delta \epsilon_n^0 \, \cos(\Omega \, t + \varphi_n)$
 in Eq.\,(\ref{eq:deltaepsilon}). Using this form in Eq.\,(\ref{eq:deltag}) we find
 %
 \begin{equation} \label{eq:deltag_harm}
@@ -1350,7 +1349,6 @@ creation and annihilation operators that causes the DCE radiation,
 as will be shown in Section \ref{sec:dcr} below. For a graphical representation 
 of the frequency jumps generated by these scattering processes, see Figure \ref{fig:jump}.
 %
-\newpage
 
 \begin{figure}
     \includegraphics[width=1.0\textwidth, keepaspectratio]{figures/system/jump.png}
@@ -1372,10 +1370,7 @@ of the frequency jumps generated by these scattering processes, see Figure \ref{
     \label{fig:jump}
 \end{figure}
 
-If for given $\omega$ a transition from positive to negative frequencies
-occurs within the range specified by Eq.\,(\ref{eq:table}),
-we use the special index $\kappa$ for the {\em first} negative frequency 
-$\omega_{\kappa}<0$ found by reading the table (\ref{eq:table}) from top to bottom. 
+If for given $\omega$ a transition from positive to negative frequencies occurs within the range specified by Eq.\,(\ref{eq:table}), we use the special index $\kappa$ for the {\em first} negative frequency $\omega_{\kappa}<0$ found by reading the table (\ref{eq:table}) from top to bottom. 
 Thus
 %
 \begin{equation} \label{eq:table_kappa}
@@ -1586,7 +1581,7 @@ are equal for all $n$, and we recover the result in Eq.\,(\ref{eq:flux_field_sta
 found in the static case. 
 
 \begin{figure}
-    \centering
+    %
     \includegraphics[width=0.4\textwidth, keepaspectratio]{figures/system/xy.png}
     \caption{Matrix $S$ transforming vectors $\vec{X}_R$, $\vec{X}_L$ on the left of SQUID site $n$
     to vectors $\vec{Y}_R$, $\vec{Y}_L$ on the right of SQUID site $n$ according to 
@@ -1682,7 +1677,7 @@ depend on the set of frequencies $\omega_{\,\alpha}$ in Eq.\,(\ref{eq:table}) by
 dispersion relation $K(\omega)$. 
 
 \begin{figure}
-    %\centering
+    %
     \includegraphics[width=1.0\textwidth, keepaspectratio]{figures/system/system.png}
     \caption{SQUID sites $n$ (blue) and CPW sections $n$ with flux field $\hat{\phi}_{\,n}(x,t)$ for 
     $n-1 < x < n$ (black). The matrix $S_n$ in Eq.\,(\ref{eq:matrix_s}) (red) transfers the flux field across the 
@@ -2007,10 +2002,6 @@ n_{\,\text{left}}^{\,L}(\omega_{\,\alpha}, T) \, & = \,
 with the matrices $C$, $D$ given by Eq.\,(\ref{eq:bigabcd}). 
 
 
-
-
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Summary of computational procedure}
@@ -2026,7 +2017,10 @@ We use again unitless variables
 by expressing lengths in units of $\ell$
 and times in units of $\ell/v$ where $\ell$ is the distance between SQUIDs in the periodic array
 and $v$ is the speed of light in the CPW (see text after Eq.\,(\ref{eq:BC_freq_static})). 
-The calculation is illustrated in the Mathematica notebook in Appendix \ref{ch:Mathematica_KP}. Results in Chapter \ref{ch:results} were generated using the full-length calculation with a Python program available in the author's public GitHub Repository \cite{Github_Repository}.
+The calculation of the band structure $\omega_{\,\nu}(k)$
+and Bloch functions $\psi_{\nu,\,k}(x) = e^{i k x} u_{\nu,\,k}(x)$ for the 
+Kronig-Penney type model discussed in Section \ref{subsec:kpsol} is 
+illustrated in the Mathematica notebook in the Appendix. Results in Chapter \ref{ch:results} were generated using the full-length calculation with a Python program available in the author's public GitHub Repository \cite{Github_Repository}.
 %
 Using unitless variables, the only system-specific input parameters are:
 %
@@ -2072,7 +2066,7 @@ The function $k(\omega, \epsilon) > 0$ corresponds to $K(\omega)$ defined in Eq.
 \item \label{item:u}
 Program a function $u(x, \omega, \epsilon)$ corresponding to 
 $u_{\,\omega}(x) = u_{\nu, \, k(\omega)}(x)$ in Eq.\,(\ref{eq:psi1}).
-A closed-form expression of $u(x, \omega, \epsilon)$ is given in the Mathematica notebook in Appendix \ref{ch:Mathematica_KP}
+A closed-form expression of $u(x, \omega, \epsilon)$ is given in the Mathematica notebook in the Appendix. 
 %
 where the function is called "u1" for $k>0$ (right-moving mode) and "u2" for $k<0$ (left-moving mode). 
 In the notebook, $\omega$ is denoted $q$
